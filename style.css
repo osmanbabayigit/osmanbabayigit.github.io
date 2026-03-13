@@ -1,0 +1,181 @@
+/* Google Fonts'tan Inter yazı tipini çekiyoruz */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* RENK PALETİMİZ (Değişkenler) */
+:root {
+    --bg-color: #121212;         /* Derin kömür grisi arka plan */
+    --surface-color: #1e1e1e;    /* Kartlar ve kutular için bir tık açık gri */
+    --text-primary: #f3f4f6;     /* Başlıklar için kırık beyaz */
+    --text-secondary: #9ca3af;   /* Paragraflar için yumuşak gri */
+    
+    /* Vurgu rengi: Şu an Swift Turuncusu. Mavi istersen #3b82f6 yapabilirsin */
+    --accent-color: #f05138;     
+}
+
+/* TEMEL SIFIRLAMA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENEL GÖRÜNÜM AYARLARI */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Linklerin varsayılan mavi rengini ve alt çizgisini kaldırıp kendi stilimizi veriyoruz */
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color 0.3s ease; /* Üzerine gelince yumuşak renk değiştirme efekti */
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+/* --- ÜST MENÜ (HEADER) TASARIMI --- */
+header {
+    position: fixed; /* Sayfayı kaydırdıkça menünün hep en üstte kalmasını sağlar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.85); /* Arka plan rengine hafif saydamlık verdik */
+    backdrop-filter: blur(12px); /* Arkası bulanık cam efekti (Premium his) */
+    -webkit-backdrop-filter: blur(12px); /* Safari tarayıcı desteği için */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Menünün altına çok ince, zarif bir çizgi */
+    z-index: 1000; /* Menünün her zaman diğer içeriklerin üstünde durmasını sağlar */
+}
+
+/* Menünün içindeki elemanları hizalama */
+nav {
+    max-width: 1100px; /* İçeriğin ekranın kenarlarına çok yapışmasını engeller */
+    margin: 0 auto; /* Sayfayı tam ortalar */
+    padding: 20px;
+    display: flex; /* İçindeki elemanları (logo ve linkler) yan yana dizer */
+    justify-content: space-between; /* Logoyu en sola, linkleri en sağa iter */
+    align-items: center; /* Dikeyde tam ortalar */
+}
+
+/* Logo Tasarımı */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+/* Logodaki noktayı turuncu (vurgu rengi) yapıyoruz */
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Menü Linkleri */
+.nav-links {
+    list-style: none; /* Linklerin başındaki madde işaretlerini kaldırır */
+    display: flex;
+    gap: 35px; /* Kelimeler arasındaki boşluk */
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary); /* Normalde soluk gri */
+    transition: color 0.3s ease; /* Renk değişiminin yumuşak olmasını sağlar */
+}
+
+/* Mouse ile linkin üzerine gelince olacaklar */
+.nav-links a:hover {
+    color: var(--text-primary); /* Rengi beyaza döner */
+}
+/* --- ANA SAYFA (HERO) TASARIMI --- */
+#giris {
+    height: 100vh; /* Ekran yüksekliğinin %100'ünü kaplar (Tam ekran yapar) */
+    display: flex;
+    justify-content: center; /* İçeriği yatayda tam ortaya alır */
+    align-items: center; /* İçeriği dikeyde tam ortaya alır */
+    text-align: center; /* Yazıları ortalar */
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px; /* Paragrafın ekranın sonuna kadar uzayıp çirkin durmasını engeller */
+}
+
+/* Büyük Başlık Ayarları */
+/* Büyük Başlık Ayarları */
+.hero-content h1 {
+    font-size: 2.8rem; /* 3.5rem'den 2.8rem'e düşürdük */
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    white-space: nowrap; /* İsmin alt satıra düşmesini kesin olarak engeller */
+}
+
+/* İsim Vurgusu */
+.vurgu {
+    color: var(--accent-color); /* Swift turuncusu rengini ismine verir */
+}
+
+/* Alt Başlık Ayarları */
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: var(--text-secondary); /* Hafif soluk gri */
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+/* Paragraf Ayarları */
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px; /* Butonlarla arasına boşluk bırakır */
+    line-height: 1.8; /* Satırlar arası boşluk (Okunabilirliği artırır) */
+}
+
+/* --- BUTON TASARIMLARI --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* İki buton arasındaki boşluk */
+}
+
+/* Birinci Buton (Turuncu Dolgulu) */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 32px; /* İç boşluklar (Yukarı/Aşağı 12px, Sağ/Sol 32px) */
+    border-radius: 8px; /* Köşeleri hafif yuvarlar */
+    font-weight: 600;
+    border: 2px solid var(--accent-color);
+    transition: all 0.3s ease; /* Hover efektinin yumuşak olmasını sağlar */
+}
+
+/* Birinci Buton Efekti (Mouse üzerine gelince) */
+/* Birinci Buton Efekti (Mouse üzerine gelince) */
+.btn-primary:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(240, 81, 56, 0.3); 
+    color: #fff; /* BU SATIRI EKLEDİK: Yazının kaybolmasını engeller */
+}
+
+/* İkinci Buton (İçi Boş, Sınır Çizgili) */
+.btn-secondary {
+    background-color: transparent; /* Arka planı yok (şeffaf) */
+    color: var(--text-primary); /* Beyaz yazı */
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Saydam beyaz kenarlık */
+    transition: all 0.3s ease;
+}
+
+/* İkinci Buton Efekti */
+.btn-secondary:hover {
+    border-color: var(--text-primary); /* Kenarlık tam beyaz olur */
+    transform: translateY(-3px); /* Bu da hafifçe yukarı kalkar */
+}
