@@ -63,10 +63,10 @@ header {
 }
 
 nav {
-    max-width: 1600px;
-    width: 95%;
+    max-width: 1600px; 
+    width: 90%; /* %95'ten %90'a çekerek kenarlardan biraz daha boşluk bıraktık, daha dengeli durur */
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 20px 0; /* Dikey boşluğu biraz artırdık */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,7 +86,7 @@ nav {
 .nav-links { 
     list-style: none; 
     display: flex; 
-    gap: 35px; 
+    gap: 50px; 
 }
 
 .nav-links a { 
@@ -218,27 +218,89 @@ nav {
     justify-content: center; 
 }
 
-.foto-kutu {
-    width: 380px; 
-    height: 380px;
-    background-color: var(--surface-color);
-    border-radius: 20px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    color: var(--text-secondary);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px); 
+.bento-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.tech-box {
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: var(--glass-shadow);
-    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.foto-kutu:hover { 
-    border-color: var(--accent-color); 
-    transform: scale(1.02); 
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    z-index: 2;
 }
 
+.tech-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    z-index: 2;
+}
+
+/* --- ÖZEL RENK AURARI (GLOW EFFECTS) --- */
+
+/* Swift: Turuncu */
+.swift-box:hover {
+    border-color: #f05138;
+    box-shadow: 0 0 30px rgba(240, 81, 56, 0.2);
+}
+.swift-box::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(240, 81, 56, 0.1) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.5s;
+}
+
+/* Flutter: Mavi */
+.flutter-box:hover {
+    border-color: #00b5ff;
+    box-shadow: 0 0 30px rgba(0, 181, 255, 0.2);
+}
+.flutter-box::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(0, 181, 255, 0.1) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.5s;
+}
+
+/* C#: Mor */
+.cs-box:hover {
+    border-color: #ad7fa8;
+    box-shadow: 0 0 30px rgba(173, 127, 168, 0.2);
+}
+.cs-box::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(173, 127, 168, 0.1) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.5s;
+}
+
+/* Clean Code: Beyaz */
+.code-box:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.tech-box:hover::before { opacity: 1; }
+.tech-box:hover .tech-icon { transform: scale(1.2); }
 /* --- 6. YETENEKLER BÖLÜMÜ --- */
 #yetenekler { 
     padding: 100px 20px; 
