@@ -8,134 +8,445 @@
 </head>
 <body>
 
-    <div id="bg-canvas"></div>
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div id="particles"></div>
 
     <header id="header">
         <nav>
-            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Osman<span> Babayiğit.</span></div>
-            <ul class="nav-links">
-                <li><a href="#giris" class="nav-item active">Giriş</a></li>
-                <li><a href="#hakkimda" class="nav-item">Hakkımda</a></li>
-                <li><a href="#yetenekler" class="nav-item">Yetenekler</a></li>
-                <li><a href="#projeler" class="nav-item">Projeler</a></li>
+            <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                Osman<span> Babayiğit.</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#giris" data-section="giris">Giriş</a></li>
+                <li><a href="#hakkimda" data-section="hakkimda">Hakkımda</a></li>
+                <li><a href="#yetenekler" data-section="yetenekler">Yetenekler</a></li>
+                <li><a href="#projeler" data-section="projeler">Projeler</a></li>
+                <li><a href="#iletisim" data-section="iletisim">İletişim</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#giris">Giriş</a>
-            <a href="#hakkimda">Hakkımda</a>
-            <a href="#yetenekler">Yetenekler</a>
-            <a href="#projeler">Projeler</a>
-        </div>
     </header>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#giris" onclick="closeMobile()">Giriş</a>
+        <a href="#hakkimda" onclick="closeMobile()">Hakkımda</a>
+        <a href="#yetenekler" onclick="closeMobile()">Yetenekler</a>
+        <a href="#projeler" onclick="closeMobile()">Projeler</a>
+        <a href="#iletisim" onclick="closeMobile()">İletişim</a>
+    </div>
+
     <main>
+        
         <section id="giris">
-            <div class="hero-content reveal">
-                <h1>Merhaba, Ben <span class="vurgu">Osman</span></h1>
-                <div class="hero-role">
+            <div class="hero-content">
+                <div class="hero-badge reveal-fade">
+                    <span class="badge-dot"></span>Açık İşbirliğe
+                </div>
+                
+                <h1 class="reveal-fade" style="transition-delay:0.1s">
+                    Merhaba, Ben <span class="vurgu">Osman</span>
+                </h1>
+                
+                <div class="hero-role reveal-fade" style="transition-delay:0.2s">
                     <span id="typed-text"></span><span class="typed-cursor">|</span>
                 </div>
-                <p>Yazılım dünyasında estetik ve fonksiyonelliği bir araya getiren çözümler üretmeye odaklıyım. Öğrenme tutkumla geleceğin teknolojilerini keşfediyorum.</p>
-                <div class="hero-buttons">
+                
+                <p class="reveal-fade" style="transition-delay:0.3s">
+                    Yazılım dünyasında estetik ve fonksiyonelliği bir araya getiren çözümler üretmeye odaklıyım. Öğrenme tutkumla geleceğin teknolojilerini keşfediyorum.
+                </p>
+                
+                <div class="hero-buttons reveal-fade" style="transition-delay:0.4s">
                     <a href="#projeler" class="btn btn-primary">Projelerimi Gör</a>
                     <a href="#hakkimda" class="btn btn-secondary">Daha Fazla</a>
                 </div>
+                
+                <div class="hero-stats reveal-fade" style="transition-delay:0.5s">
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Yıl Tecrübe</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-label">Tamamlanan Proje</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Teknoloji</span>
+                    </div>
+                </div>
             </div>
+            
             <div class="scroll-hint">
                 <div class="scroll-line"></div>
-                <span>Kaydır</span>
             </div>
         </section>
 
         <section id="hakkimda">
             <div class="hakkimda-container">
                 <div class="hakkimda-metin reveal-left">
-                    <h2>Hakkımda</h2>
-                    <p>Yazılım serüvenim, eski bir oyuncu olarak "kendi dünyamı inşa etme" hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz <strong>özgürlük hissi</strong>, bu alana olan tutkumu ateşledi.</p>
-                    <p>Bir projede ana hedefim her zaman; karmaşıklıktan uzak, ihtiyacı tam karşılayan, optimize edilmiş ve <strong>estetik açıdan şık</strong> bir iş ortaya çıkarmaktır. Şu anda ağırlıklı olarak <strong>Swift</strong> ile macOS ve iOS ekosistemine uygulamalar geliştiriyorum. Çapraz platform çözümler için <strong>Flutter (Dart)</strong> ile çalışırken, Visual Studio'da <strong>C#</strong> ile yeni fikirler deniyorum.</p>
+                    <p class="section-label">// Ben Kimim</p>
+                    <h2 class="section-title">Hakkımda</h2>
+                    <p>Yazılım serüvenim, eski bir oyuncu olarak <strong>"kendi dünyamı inşa etme"</strong> hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz <strong>özgürlük hissi</strong>, bu alana olan tutkumu ateşledi.</p>
+                    <p>Bir projede ana hedefim her zaman; karmaşıklıktan uzak, ihtiyacı tam karşılayan, optimize edilmiş ve <strong>estetik açıdan şık</strong> bir iş ortaya çıkarmaktır. Şu anda ağırlıklı olarak <strong>Swift</strong> ile macOS ve iOS ekosistemine uygulamalar geliştiriyorum.</p>
+                    <p>Çapraz platform için <strong>Flutter (Dart)</strong> ve Visual Studio'da <strong>C#</strong> ile yeni fikirler deniyorum. İleride asıl mesleğim olmasını hayal ettiğim <strong>Game Development</strong> ise beni besleyen en büyük vizyonum.</p>
+                    <div class="hakkimda-tags">
+                        <span class="htag">🎮 Oyun Tutkunu</span>
+                        <span class="htag">🎵 Müzik Keşifçisi</span>
+                        <span class="htag">✨ Anime İzleyici</span>
+                        <span class="htag">🚀 Büyük Hayaller</span>
+                    </div>
                 </div>
-                
+
                 <div class="hakkimda-gorsel reveal-right">
                     <div class="bento-container">
-                        <div class="tech-box swift-box">
-                            <div class="tech-icon"></div>
+                        
+                        <div class="bento-item tech-box swift-box">
+                            <div class="b-icon">
+                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M87.3,62.1c0.2-0.7,0.4-1.5,0.5-2.2c2.1-11.5-3.8-25.2-14.6-33.8C66.4,20.7,57.9,18,50.4,18.5
+                                    c-0.4,0-0.8,0.1-1.3,0.1c0,0,3.2,2.1,5.1,5.3c2.3,3.8,2.4,8.2,0.5,12.3c-0.4,0.9-0.9,1.8-1.4,2.7
+                                    c-2.5,3.8-8,9.8-18.8,15c-9.7,4.7-19.5,5.3-26.9,3.9c-0.2,0-0.4-0.1-0.6-0.1l0.1,0.1
+                                    c1.2,1.6,2.5,3.1,3.9,4.5C23.7,74.9,38,79.7,51.4,75.2c0,0,3.6-1.3,7-4.1
+                                    c4.1-3.3,6.8-7.7,7.3-12.4c0.3-2.7-0.3-5.5-1.8-8c7.5,5,11.7,12.6,10.8,20.4
+                                    c-0.1,0.8-0.3,1.6-0.5,2.4C80.3,71.6,84.5,67.3,87.3,62.1z" fill="#F05138"/>
+                                </svg>
+                            </div>
                             <span class="tech-label">Swift</span>
+                            <span class="tech-sub">iOS · macOS</span>
                         </div>
-                        <div class="tech-box flutter-box">
-                            <div class="tech-icon">💙</div>
+
+                        <div class="bento-item tech-box flutter-box">
+                            <div class="b-icon">
+                                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="14,2 40,24 30,34 4,8" fill="#54C5F8"/>
+                                    <polygon points="14,28 24,18 40,34 30,44" fill="#01579B"/>
+                                    <polygon points="30,34 36,40 30,46 24,40" fill="#29B6F6"/>
+                                </svg>
+                            </div>
                             <span class="tech-label">Flutter</span>
+                            <span class="tech-sub">Cross-Platform</span>
                         </div>
-                        <div class="tech-box cs-box">
-                            <div class="tech-icon">⚙️</div>
+
+                        <div class="bento-item tech-box cs-box">
+                            <div class="b-icon">
+                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 3 L43 13.5 L43 34.5 L24 45 L5 34.5 L5 13.5 Z" fill="#9b4f96"/>
+                                    <path d="M24 3 L5 13.5 L5 34.5 L24 45 Z" fill="rgba(0,0,0,0.15)"/>
+                                    <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
+                                          font-family="'Arial Black',Arial,sans-serif" font-weight="900"
+                                          font-size="16" fill="white">C#</text>
+                                </svg>
+                            </div>
                             <span class="tech-label">C# / .NET</span>
+                            <span class="tech-sub">Visual Studio</span>
                         </div>
-                        <div class="tech-box code-box">
-                            <div class="tech-icon">⌘</div>
-                            <span class="tech-label">Clean Code</span>
+
+                        <div class="bento-item tech-box code-box">
+                            <div class="b-icon">
+                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="15" width="40" height="22" rx="10" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.32)" stroke-width="1.4"/>
+                                    <rect x="13" y="20" width="2.8" height="9" rx="1.4" fill="rgba(255,255,255,0.65)"/>
+                                    <rect x="9.6" y="23.1" width="9" height="2.8" rx="1.4" fill="rgba(255,255,255,0.65)"/>
+                                    <circle cx="33" cy="21" r="2.4" fill="#f05138" opacity=".85"/>
+                                    <circle cx="37.5" cy="25.5" r="2.4" fill="#3b82f6" opacity=".85"/>
+                                    <circle cx="33" cy="30" r="2.4" fill="#34c759" opacity=".85"/>
+                                    <circle cx="28.5" cy="25.5" r="2.4" fill="#ffd60a" opacity=".85"/>
+                                    <path d="M8 15 Q8 9 16 9 L20 9 Q22 9 22 11 L22 15" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" fill="none"/>
+                                    <path d="M40 15 Q40 9 32 9 L28 9 Q26 9 26 11 L26 15" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="tech-label">Game Dev</span>
+                            <span class="tech-sub">Unity · Vision</span>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="yetenekler">
-            <div class="reveal">
-                <h2>Yetenekler</h2>
-                <p class="section-desc">Kullandığım teknolojiler ve uzmanlık seviyelerim.</p>
-                <div class="yetenek-grid">
-                    <div class="yetenek-karti">Swift <span class="seviye-etiket ileri">İleri</span></div>
-                    <div class="yetenek-karti">SwiftUI <span class="seviye-etiket orta">Orta</span></div>
-                    <div class="yetenek-karti">Xcode <span class="seviye-etiket ileri">İleri</span></div>
-                    <div class="yetenek-karti">Git/GitHub <span class="seviye-etiket orta">Orta</span></div>
-                    <div class="yetenek-karti">Firebase <span class="seviye-etiket temel">Temel</span></div>
-                    <div class="yetenek-karti">CoreData <span class="seviye-etiket temel">Temel</span></div>
+            <p class="section-label reveal">// Araç Setim</p>
+            <h2 class="section-title reveal">Yetenekler</h2>
+            <p class="section-desc reveal">Kullandığım teknolojiler ve uzmanlık seviyelerim.</p>
+            
+            <div class="yetenek-grid">
+                <div class="yetenek-karti reveal" style="transition-delay:0s">
+                    <div class="yk-left">
+                        <span class="yk-icon">🦅</span>
+                        <div><span class="yk-name">Swift</span><span class="yk-cat">Apple Ekosistemi</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.05s">
+                    <div class="yk-left">
+                        <span class="yk-icon">🎨</span>
+                        <div><span class="yk-name">SwiftUI</span><span class="yk-cat">UI Framework</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="70"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.10s">
+                    <div class="yk-left">
+                        <span class="yk-icon">🛠</span>
+                        <div><span class="yk-name">Xcode</span><span class="yk-cat">IDE</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.15s">
+                    <div class="yk-left">
+                        <span class="yk-icon">🐙</span>
+                        <div><span class="yk-name">Git / GitHub</span><span class="yk-cat">Version Control</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="72"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.20s">
+                    <div class="yk-left">
+                        <span class="yk-icon">🔥</span>
+                        <div><span class="yk-name">Firebase</span><span class="yk-cat">Backend</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="45"></div></div>
+                        <span class="seviye-etiket temel">Temel</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.25s">
+                    <div class="yk-left">
+                        <span class="yk-icon">💾</span>
+                        <div><span class="yk-name">CoreData</span><span class="yk-cat">Persistence</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="42"></div></div>
+                        <span class="seviye-etiket temel">Temel</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.30s">
+                    <div class="yk-left">
+                        <span class="yk-icon">💙</span>
+                        <div><span class="yk-name">Flutter / Dart</span><span class="yk-cat">Cross-Platform</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="38"></div></div>
+                        <span class="seviye-etiket temel">Temel</span>
+                    </div>
+                </div>
+                
+                <div class="yetenek-karti reveal" style="transition-delay:0.35s">
+                    <div class="yk-left">
+                        <span class="yk-icon">⚙️</span>
+                        <div><span class="yk-name">C# / .NET</span><span class="yk-cat">Game Dev · Backend</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="35"></div></div>
+                        <span class="seviye-etiket temel">Temel</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projeler">
-            <div class="reveal">
-                <h2>Projelerim</h2>
-                <p class="section-desc">Üzerinde çalıştığım ve GitHub'da paylaştığım çalışmalarım.</p>
-                <div class="proje-grid">
-                    <div class="proje-karti">
-                        <div class="proje-gorsel"></div>
-                        <div class="proje-icerik">
+            <p class="section-label reveal">// Çalışmalarım</p>
+            <h2 class="section-title reveal">Projelerim</h2>
+            <p class="section-desc reveal">Üzerinde çalıştığım ve GitHub'da paylaştığım çalışmalarım.</p>
+            
+            <div class="proje-grid">
+                
+                <div class="proje-karti reveal">
+                    <div class="proje-mockup mockup-portfolio">
+                        <div class="mockup-phone">
+                            <div class="mockup-notch"></div>
+                            <div class="mockup-screen">
+                                <div class="ms-topbar">
+                                    <div class="ms-dot r"></div>
+                                    <div class="ms-dot y"></div>
+                                    <div class="ms-dot g"></div>
+                                </div>
+                                <div class="ms-content">
+                                    <div class="ms-line w60"></div>
+                                    <div class="ms-line w40"></div>
+                                    <div class="ms-card"></div>
+                                    <div class="ms-line w80"></div>
+                                    <div class="ms-line w50"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mockup-glow orange"></div>
+                    </div>
+                    <div class="proje-icerik">
+                        <div class="proje-header">
                             <h3>Swift Portfolio App</h3>
-                            <div class="proje-tags">
-                                <span class="proje-tag">Swift</span>
-                                <span class="proje-tag">UIKit</span>
-                            </div>
-                            <p>iOS platformu için geliştirilmiş modern ve akıcı bir portfolyo uygulaması.</p>
-                            <a href="#" class="github-link">
-                                GitHub'da İncele 
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
+                            <div class="proje-status active"><span class="status-dot"></span> Aktif</div>
                         </div>
-                    </div>
-                    <div class="proje-karti">
-                        <div class="proje-gorsel">☁️</div>
-                        <div class="proje-icerik">
-                            <h3>Hava Durumu API</h3>
-                            <div class="proje-tags">
-                                <span class="proje-tag">SwiftUI</span>
-                                <span class="proje-tag">REST API</span>
-                            </div>
-                            <p>Canlı API entegrasyonu ile anlık hava durumu verilerini çeken şık bir uygulama.</p>
-                            <a href="#" class="github-link">
-                                GitHub'da İncele 
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
+                        <p>iOS platformu için geliştirilmiş modern bir portföy uygulaması. SwiftUI ile sıfırdan inşa edildi, animasyonlu geçişler ve dinamik veri destekler.</p>
+                        <div class="proje-tags">
+                            <span class="proje-tag">Swift</span>
+                            <span class="proje-tag">SwiftUI</span>
+                            <span class="proje-tag">iOS</span>
+                            <span class="proje-tag">Animations</span>
                         </div>
+                        <a href="#" class="github-link">
+                            GitHub'da İncele 
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
                     </div>
+                </div>
+
+                <div class="proje-karti reveal" style="transition-delay:0.1s">
+                    <div class="proje-mockup mockup-weather">
+                        <div class="mockup-phone">
+                            <div class="mockup-notch"></div>
+                            <div class="mockup-screen weather-screen">
+                                <div class="ws-city">İstanbul</div>
+                                <div class="ws-temp">18°</div>
+                                <div class="ws-desc">Parçalı Bulutlu</div>
+                                <div class="ws-row">
+                                    <div class="ws-item">💧 65%</div>
+                                    <div class="ws-item">💨 12km</div>
+                                    <div class="ws-item">🌡 UV 3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mockup-glow blue"></div>
+                    </div>
+                    <div class="proje-icerik">
+                        <div class="proje-header">
+                            <h3>Hava Durumu</h3>
+                            <div class="proje-status"><span class="status-dot yellow"></span> Devam Ediyor</div>
+                        </div>
+                        <p>REST API entegrasyonu ile anlık hava verisi çeken, CoreLocation destekli, şık arayüze sahip iOS uygulaması.</p>
+                        <div class="proje-tags">
+                            <span class="proje-tag">Swift</span>
+                            <span class="proje-tag">API</span>
+                            <span class="proje-tag">CoreLocation</span>
+                            <span class="proje-tag">URLSession</span>
+                        </div>
+                        <a href="#" class="github-link">
+                            GitHub'da İncele 
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proje-karti coming-soon reveal" style="transition-delay:0.2s">
+                    <div class="cs-inner">
+                        <div class="cs-icon">🎮</div>
+                        <h3>Game Project</h3>
+                        <p>Unity & C# ile geliştirilen ilk oyun projesi.</p>
+                        <span class="cs-badge">Çok Yakında</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="iletisim">
+            <div class="iletisim-wrapper">
+                <div class="iletisim-sol reveal-left">
+                    <p class="section-label">// Konuşalım</p>
+                    <h2 class="section-title">Bir Fikrin mi Var?</h2>
+                    <p class="section-desc" style="margin-bottom:40px">Proje teklifi, iş birliği ya da sadece merhaba demek için — her zaman açığım. En geç 24 saat içinde dönüş yapacağım.</p>
+                    
+                    <div class="iletisim-info-list">
+                        <a href="mailto:osmanbabayigit@email.com" class="iletisim-info-item">
+                            <div class="ii-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 0.9 2 2v12c0 1.1-0.9 2-2 2H4c-1.1 0-2-0.9-2-2V6c0-1.1 0.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="ii-text">
+                                <span class="ii-label">E-Posta</span>
+                                <span class="ii-value">osmanbabayigit@email.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/osmanbabayigit" target="_blank" class="iletisim-info-item">
+                            <div class="ii-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-0.94-2.61c3.14-0.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73 0.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27 0.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <div class="ii-text">
+                                <span class="ii-label">GitHub</span>
+                                <span class="ii-value">github.com/osmanbabayigit</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/osmanbabayigit" target="_blank" class="iletisim-info-item">
+                            <div class="ii-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="ii-text">
+                                <span class="ii-label">LinkedIn</span>
+                                <span class="ii-value">linkedin.com/in/osmanbabayigit</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="iletisim-sag reveal-right">
+                    <form class="iletisim-form" onsubmit="handleForm(event)">
+                        <div class="form-group">
+                            <label>İsim</label>
+                            <input type="text" placeholder="Adın Soyadın" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Posta</label>
+                            <input type="email" placeholder="ornek@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Konu</label>
+                            <input type="text" placeholder="Proje hakkında...">
+                        </div>
+                        <div class="form-group">
+                            <label>Mesaj</label>
+                            <textarea placeholder="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit" id="formBtn">
+                            Gönder
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                        <div id="form-success" class="form-success" style="display:none">
+                            ✅ Mesajın alındı! En kısa sürede dönüş yapacağım.
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
+
     </main>
 
     <div class="social-sidebar">
@@ -146,109 +457,199 @@
     </div>
 
     <footer>
-        <div class="telif-hakki">
-            <p>© 2026 Osman Babayiğit. Tüm hakları saklıdır.</p>
+        <div class="footer-inner">
+            <div class="footer-logo">Osman<span> Babayiğit.</span></div>
+            <p class="footer-tagline">Design is not just what it looks like. Design is how it works.</p>
+            <div class="footer-links">
+                <a href="https://github.com/osmanbabayigit" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/osmanbabayigit" target="_blank">LinkedIn</a>
+                <a href="mailto:osmanbabayigit@email.com">E-Posta</a>
+            </div>
+            <p class="footer-copy">© 2026 Osman Babayiğit — Designed & Built with ♥</p>
         </div>
     </footer>
 
     <script>
-        // 1. ÖZEL İMLEÇ (Custom Cursor)
-        const dot = document.getElementById("cursor-dot");
-        const ring = document.getElementById("cursor-ring");
-        window.addEventListener("mousemove", (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            dot.style.left = `${posX}px`;
-            dot.style.top = `${posY}px`;
-            // Yüzük kısmına küçük bir gecikme ekliyoruz (daha şık durur)
-            setTimeout(() => {
-                ring.style.left = `${posX}px`;
-                ring.style.top = `${posY}px`;
-            }, 50);
+        // 1. DİNAMİK ARKA PLAN (CANVAS BG)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, glowX = window.innerWidth / 2, glowY = window.innerHeight / 2;
+        
+        function resizeCanvas() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        document.addEventListener('mousemove', e => { 
+            glowX = e.clientX; 
+            glowY = e.clientY; 
         });
 
-        // 2. OTOMATİK YAZI (Typed Text Effect)
-        const typedTextSpan = document.getElementById("typed-text");
-        const textArray = ["Software Developer", "iOS Developer", "Tech Enthusiast"];
-        const typingDelay = 100;
-        const erasingDelay = 50;
-        const newTextDelay = 2000;
-        let textArrayIndex = 0;
-        let charIndex = 0;
-
-        function type() {
-            if (charIndex < textArray[textArrayIndex].length) {
-                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(type, typingDelay);
-            } else {
-                setTimeout(erase, newTextDelay);
+        function drawBG() {
+            ctx.clearRect(0, 0, W, H);
+            ctx.strokeStyle = 'rgba(255,255,255,0.033)';
+            ctx.lineWidth = 1;
+            const S = 28;
+            
+            for (let x = 0; x <= W; x += S) { 
+                ctx.beginPath(); 
+                ctx.moveTo(x, 0); 
+                ctx.lineTo(x, H); 
+                ctx.stroke(); 
             }
-        }
-        function erase() {
-            if (charIndex > 0) {
-                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(erase, erasingDelay);
-            } else {
-                textArrayIndex++;
-                if(textArrayIndex >= textArray.length) textArrayIndex = 0;
-                setTimeout(type, typingDelay + 500);
+            for (let y = 0; y <= H; y += S) { 
+                ctx.beginPath(); 
+                ctx.moveTo(0, y); 
+                ctx.lineTo(W, y); 
+                ctx.stroke(); 
             }
+            
+            const v = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W,H) * 0.68);
+            v.addColorStop(0, 'rgba(0,0,0,0)');
+            v.addColorStop(1, 'rgba(0,0,0,0.92)');
+            ctx.fillStyle = v;
+            ctx.fillRect(0, 0, W, H);
+            
+            const m = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 300);
+            m.addColorStop(0, 'rgba(240,81,56,0.055)');
+            m.addColorStop(1, 'transparent');
+            ctx.fillStyle = m;
+            ctx.fillRect(0, 0, W, H);
+            
+            requestAnimationFrame(drawBG);
         }
-        document.addEventListener("DOMContentLoaded", function() {
-            if(textArray.length) setTimeout(type, newTextDelay);
-        });
+        drawBG();
 
-        // 3. KAYDIRINCA AÇILMA (Scroll Reveal)
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Bir kere açıldıktan sonra hep açık kalsın istersen alt satırı aktif et:
-                    // revealObserver.unobserve(entry.target);
+        // 2. UÇUŞAN PARÇACIKLAR (PARTICLES)
+        (function() {
+            const c = document.getElementById('particles');
+            for(let i = 0; i < 18; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const s = Math.random() * 2.5 + 1;
+                p.style.cssText = `left:${Math.random()*100}%; width:${s}px; height:${s}px; animation-duration:${Math.random()*18+12}s; animation-delay:${Math.random()*14}s;`;
+                c.appendChild(p);
+            }
+        })();
+
+        // 3. OTOMATİK YAZI YAZMA (TYPED TEXT)
+        const roles = ['iOS Developer', 'Swift Enthusiast', 'macOS Developer', 'Clean Code Advocate', 'Game Dev Dreamer'];
+        let rIdx = 0, cIdx = 0, deleting = false;
+        const typedEl = document.getElementById('typed-text');
+        
+        function typeWriter() {
+            const cur = roles[rIdx];
+            if (!deleting) {
+                typedEl.textContent = cur.substring(0, ++cIdx);
+                if (cIdx === cur.length) {
+                    deleting = true;
+                    setTimeout(typeWriter, 2200);
+                    return;
+                }
+            } else {
+                typedEl.textContent = cur.substring(0, --cIdx);
+                if (cIdx === 0) {
+                    deleting = false;
+                    rIdx = (rIdx + 1) % roles.length;
+                }
+            }
+            setTimeout(typeWriter, deleting ? 52 : 95);
+        }
+        typeWriter();
+
+        // 4. KAYDIRINCA AÇILMA ANİMASYONLARI (SCROLL REVEAL)
+        const revEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-fade');
+        const revObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.15 });
-        revealElements.forEach(el => revealObserver.observe(el));
+        }, { threshold: 0.1 });
+        revEls.forEach(el => revObs.observe(el));
 
-        // 4. MOBİL MENÜ TOGGLE
+        // 5. YETENEKLER İLERLEME ÇUBUKLARI (PROGRESS BARS)
+        const barObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    e.target.querySelectorAll('.progress-fill').forEach(f => {
+                        f.style.width = f.dataset.width + '%';
+                    });
+                    barObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.yetenek-karti').forEach(k => barObs.observe(k));
+
+        // 6. SAYAÇLAR (COUNTERS)
+        const counterObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                e.target.querySelectorAll('.stat-number').forEach(el => {
+                    const target = parseInt(el.dataset.target);
+                    let cur = 0;
+                    const step = target / 40;
+                    const t = setInterval(() => {
+                        cur = Math.min(cur + step, target);
+                        el.textContent = Math.floor(cur);
+                        if(cur >= target) clearInterval(t);
+                    }, 35);
+                });
+                counterObs.unobserve(e.target);
+            });
+        }, { threshold: 0.5 });
+        
+        const statsEl = document.querySelector('.hero-stats');
+        if(statsEl) counterObs.observe(statsEl);
+
+        // 7. AKTİF MENÜ TAKİBİ (ACTIVE NAV)
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const activeObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navLinks.forEach(a => {
+                        a.classList.toggle('active', a.dataset.section === e.target.id);
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => activeObs.observe(s));
+
+        // 8. HEADER ARKAPLANI KAYDIRINCA KOYULAŞTIRMA
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // 9. MOBİL MENÜ (HAMBURGER)
         const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-
+        const mobileMenu = document.getElementById('mobileMenu');
+        
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
             mobileMenu.classList.toggle('open');
         });
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
-            });
-        });
-
-        // 5. AKTİF MENÜ SEÇİCİ (Scroll yaparken Nav linkleri değişsin)
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-item');
         
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if(scrollY >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if(item.getAttribute('href').includes(current)){
-                    item.classList.add('active');
-                }
-            });
-        });
+        function closeMobile() {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+        }
+
+        // 10. İLETİŞİM FORMU SİMÜLASYONU (FORM SUBMIT)
+        function handleForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('formBtn');
+            btn.innerHTML = 'Gönderiliyor...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            }, 1200);
+        }
     </script>
 </body>
 </html>
