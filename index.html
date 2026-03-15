@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osman Babayiğit | iOS Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,16 +16,20 @@
 
     <header id="header">
         <nav>
-            <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">Osman<span> Babayiğit.</span></div>
+            <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <span class="logo-bracket">&lt;</span>OB<span class="logo-bracket">/&gt;</span>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#giris" data-section="giris">Giriş</a></li>
                 <li><a href="#hakkimda" data-section="hakkimda">Hakkımda</a></li>
                 <li><a href="#yetenekler" data-section="yetenekler">Yetenekler</a></li>
                 <li><a href="#sertifikalar" data-section="sertifikalar">Sertifikalar</a></li>
                 <li><a href="#projeler" data-section="projeler">Projeler</a></li>
-                <li><a href="#iletisim" data-section="iletisim">İletişim</a></li>
+                <li><a href="#iletisim" data-section="iletisim" class="nav-cta">İletişim</a></li>
             </ul>
-            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </nav>
     </header>
 
@@ -36,43 +43,64 @@
     </div>
 
     <main>
+
+        <!-- GİRİŞ -->
         <section id="giris">
+            <div class="hero-noise"></div>
             <div class="hero-content">
                 <div class="hero-badge reveal-fade">
                     <span class="badge-dot"></span>Staj Fırsatlarına Açık
                 </div>
-                <h1 class="reveal-fade" style="transition-delay:0.1s">Merhaba, Ben <span class="vurgu">Osman</span></h1>
-                
+                <h1 class="reveal-fade" style="transition-delay:0.1s">
+                    Merhaba, Ben<br><span class="vurgu gradient-text">Osman Babayiğit</span>
+                </h1>
                 <div class="hero-role reveal-fade" style="transition-delay:0.2s">
                     <span id="typed-text"></span><span class="typed-cursor">|</span>
                 </div>
-                
                 <p class="reveal-fade" style="transition-delay:0.3s">
                     Yazılım dünyasında estetik ve fonksiyonelliği bir araya getiren çözümler üretmeye odaklıyım. Öğrenme tutkumla geleceğin teknolojilerini keşfediyorum.
                 </p>
-                
                 <div class="hero-buttons reveal-fade" style="transition-delay:0.4s">
-                    <a href="#projeler" class="btn btn-primary">Projelerimi Gör</a>
+                    <a href="#projeler" class="btn btn-primary">
+                        <span>Projelerimi Gör</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                     <a href="#hakkimda" class="btn btn-secondary">Daha Fazla</a>
                 </div>
+                <div class="hero-stats reveal-fade" style="transition-delay:0.5s">
+                    <div class="stat">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Tamamlanan Proje</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">5</span>
+                        <span class="stat-label">Teknoloji Yığını</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">B2</span>
+                        <span class="stat-label">İngilizce Seviyesi</span>
+                    </div>
+                </div>
             </div>
-            <div class="scroll-hint"><div class="scroll-line"></div></div>
+            <div class="scroll-hint">
+                <span class="scroll-text">Keşfet</span>
+                <div class="scroll-line"></div>
+            </div>
         </section>
 
+        <!-- HAKKIMDA -->
         <section id="hakkimda">
             <div class="hakkimda-container">
                 <div class="hakkimda-metin reveal-left">
                     <p class="section-label">// Ben Kimim</p>
                     <h2 class="section-title">Hakkımda</h2>
                     <p>Yazılım serüvenim, eski bir oyuncu olarak <span class="highlight">"kendi dünyamı inşa etme"</span> hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz <span class="highlight">özgürlük hissi</span>, bu alana olan tutkumu ateşledi.</p>
-
                     <p>Şu anda ağırlıklı olarak <span class="highlight">Swift</span> ile iOS ekosistemine odaklanırken, çapraz platform için <span class="highlight">Flutter (Dart)</span> ile yeni fikirler deniyorum. Bir projede ana hedefim her zaman; karmaşıklıktan uzak, optimize edilmiş ve <span class="highlight">estetik açıdan şık</span> bir iş ortaya çıkarmaktır.</p>
-
-                    <p>Hayatımın en büyük dönüm noktası, Polonya'nın köklü kurumu <span class="highlight">AGH Bilim ve Teknoloji Üniversitesi</span>'nde geçirdiğim 5 aylık Erasmus+ süreci oldu. Kraków'da farklı uluslarla ortak projeler yürütürken VS Code üzerinde <span class="highlight">Scala</span> diliyle fonksiyonel programlamaya adım attım. Ayrıca bu süreçte bisikletle <span class="highlight">Uber</span> yaparak kazandığım <span class="highlight">girişimci ruh</span>, zorluklar karşısında çözüm üretme becerimi pekiştirdi.</p>
-
-                    <p>İleride asıl mesleğim olmasını hayal ettiğim <span class="highlight">Game Development</span> ise beni besleyen en büyük tutkum olmaya devam ediyor.</p>
+                    <p>Hayatımın en büyük dönüm noktası, Polonya'nın köklü kurumu <span class="highlight">AGH Bilim ve Teknoloji Üniversitesi</span>'nde geçirdiğim 5 aylık Erasmus+ süreci oldu. Kraków'da farklı uluslarla ortak projeler yürütürken <span class="highlight">Scala</span> diliyle fonksiyonel programlamaya adım attım. İleride asıl mesleğim olmasını hayal ettiğim <span class="highlight">Game Development</span> ise beni besleyen en büyük tutkum.</p>
                     <div class="hakkimda-tags">
-                        <span class="htag">🌍 Erasmus+ katılımcısı</span>
+                        <span class="htag">🌍 Erasmus+ Katılımcısı</span>
                         <span class="htag">🎮 Oyun Tutkunu</span>
                         <span class="htag">🎵 Müzik Keşifçisi</span>
                         <span class="htag">✨ Anime İzleyici</span>
@@ -82,21 +110,17 @@
 
                 <div class="hakkimda-gorsel reveal-right">
                     <div class="bento-container">
+                        <!-- Swift -->
                         <div class="bento-item tech-box swift-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M87.3,62.1c0.2-0.7,0.4-1.5,0.5-2.2c2.1-11.5-3.8-25.2-14.6-33.8C66.4,20.7,57.9,18,50.4,18.5
-                                    c-0.4,0-0.8,0.1-1.3,0.1c0,0,3.2,2.1,5.1,5.3c2.3,3.8,2.4,8.2,0.5,12.3c-0.4,0.9-0.9,1.8-1.4,2.7
-                                    c-2.5,3.8-8,9.8-18.8,15c-9.7,4.7-19.5,5.3-26.9,3.9c-0.2,0-0.4-0.1-0.6-0.1l0.1,0.1
-                                    c1.2,1.6,2.5,3.1,3.9,4.5C23.7,74.9,38,79.7,51.4,75.2c0,0,3.6-1.3,7-4.1
-                                    c4.1-3.3,6.8-7.7,7.3-12.4c0.3-2.7-0.3-5.5-1.8-8c7.5,5,11.7,12.6,10.8,20.4
-                                    c-0.1,0.8-0.3,1.6-0.5,2.4C80.3,71.6,84.5,67.3,87.3,62.1z" fill="#F05138"/>
+                                    <path d="M87.3,62.1c0.2-0.7,0.4-1.5,0.5-2.2c2.1-11.5-3.8-25.2-14.6-33.8C66.4,20.7,57.9,18,50.4,18.5c-0.4,0-0.8,0.1-1.3,0.1c0,0,3.2,2.1,5.1,5.3c2.3,3.8,2.4,8.2,0.5,12.3c-0.4,0.9-0.9,1.8-1.4,2.7c-2.5,3.8-8,9.8-18.8,15c-9.7,4.7-19.5,5.3-26.9,3.9c-0.2,0-0.4-0.1-0.6-0.1l0.1,0.1c1.2,1.6,2.5,3.1,3.9,4.5C23.7,74.9,38,79.7,51.4,75.2c0,0,3.6-1.3,7-4.1c4.1-3.3,6.8-7.7,7.3-12.4c0.3-2.7-0.3-5.5-1.8-8c7.5,5,11.7,12.6,10.8,20.4c-0.1,0.8-0.3,1.6-0.5,2.4C80.3,71.6,84.5,67.3,87.3,62.1z" fill="#F05138"/>
                                 </svg>
                             </div>
                             <span class="tech-label">Swift</span>
                             <span class="tech-sub">iOS · macOS</span>
                         </div>
-
+                        <!-- Flutter -->
                         <div class="bento-item tech-box flutter-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -108,21 +132,19 @@
                             <span class="tech-label">Flutter</span>
                             <span class="tech-sub">Cross-Platform</span>
                         </div>
-
+                        <!-- C# -->
                         <div class="bento-item tech-box cs-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M24 3 L43 13.5 L43 34.5 L24 45 L5 34.5 L5 13.5 Z" fill="#9b4f96"/>
                                     <path d="M24 3 L5 13.5 L5 34.5 L24 45 Z" fill="rgba(0,0,0,0.15)"/>
-                                    <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
-                                          font-family="'Arial Black',Arial,sans-serif" font-weight="900"
-                                          font-size="16" fill="white">C#</text>
+                                    <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="16" fill="white">C#</text>
                                 </svg>
                             </div>
                             <span class="tech-label">C# / .NET</span>
                             <span class="tech-sub">Visual Studio</span>
                         </div>
-
+                        <!-- Game Dev -->
                         <div class="bento-item tech-box code-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,176 +167,124 @@
             </div>
         </section>
 
+        <!-- YETENEKLER -->
         <section id="yetenekler">
-    <p class="section-label reveal">// Araç Setim</p>
-    <h2 class="section-title reveal">Yetenekler</h2>
-    <p class="section-desc reveal">Projelerimde aktif olarak kullandığım teknolojiler ve mimariler.</p>
-    
-    <div class="yetenek-grid">
-        
-        <div class="yetenek-karti reveal" style="transition-delay:0s">
-    <div class="yk-left">
-        <span class="yk-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="#F05138" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.5 2.5c-.3.4-.6.9-.9 1.4-2.8 5.7-9.5 11.2-16.6 11.2-.5 0-.9-.1-1.4-.2 2.2 3.8 6.5 6.3 11.2 6.3 4.2 0 8.1-1.9 10.7-5.1.7-.9 1.4-1.9 2-2.9-2.1.2-4.3-.4-6.1-1.7 3.3-2.6 5.5-6.5 5.5-10.8 0-.4-.1-.8-.1-1.2-1.3 1.1-2.9 1.8-4.6 2C15.8 4.3 16.2 3.4 16.5 2.5z"/>
-            </svg>
-        </span>
-        <div><span class="yk-name">Swift & iOS SDK</span><span class="yk-cat">Native Development</span></div>
-    </div>
-    <div class="yk-right">
-        <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
-        <span class="seviye-etiket ileri">İleri</span>
-    </div>
-</div>
+            <p class="section-label reveal">// Araç Setim</p>
+            <h2 class="section-title reveal">Yetenekler</h2>
+            <p class="section-desc reveal">Projelerimde aktif olarak kullandığım teknolojiler ve mimariler.</p>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.05s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#54C5F8" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zM14.28 11.082l-2.023 2.052-2.022-2.052L14.28 7l4.045 4.082-4.045 4.082z" fill="#01579B"/>
-                        <path d="M10.235 15.186l-4.234 4.284L14.314 24h7.37L10.235 12.553z" fill="#29B6F6"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">Flutter & Dart</span><span class="yk-cat">Cross-Platform</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
-                <span class="seviye-etiket ileri">İleri</span>
-            </div>
-        </div>
+            <div class="yetenek-grid">
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.10s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                        <line x1="6" y1="6" x2="6.01" y2="6"/>
-                        <line x1="6" y1="18" x2="6.01" y2="18"/>
-                        <path d="M12 10v4"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">RESTful API & JSON</span><span class="yk-cat">Network & Data</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
-                <span class="seviye-etiket ileri">İleri</span>
-            </div>
-        </div>
+                <div class="yetenek-karti reveal" style="transition-delay:0s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="#F05138"><path d="M16.5 2.5c-.3.4-.6.9-.9 1.4-2.8 5.7-9.5 11.2-16.6 11.2-.5 0-.9-.1-1.4-.2 2.2 3.8 6.5 6.3 11.2 6.3 4.2 0 8.1-1.9 10.7-5.1.7-.9 1.4-1.9 2-2.9-2.1.2-4.3-.4-6.1-1.7 3.3-2.6 5.5-6.5 5.5-10.8 0-.4-.1-.8-.1-1.2-1.3 1.1-2.9 1.8-4.6 2C15.8 4.3 16.2 3.4 16.5 2.5z"/></svg></span>
+                        <div><span class="yk-name">Swift & iOS SDK</span><span class="yk-cat">Native Development</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.15s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f89820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                        <line x1="6" y1="1" x2="6" y2="4"/>
-                        <line x1="10" y1="1" x2="10" y2="4"/>
-                        <line x1="14" y1="1" x2="14" y2="4"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">Java & OOP</span><span class="yk-cat">Core Concepts</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
-                <span class="seviye-etiket ileri">İleri</span>
-            </div>
-        </div>
+                <div class="yetenek-karti reveal" style="transition-delay:0.05s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zM14.28 11.082l-2.023 2.052-2.022-2.052L14.28 7l4.045 4.082-4.045 4.082z" fill="#01579B"/><path d="M10.235 15.186l-4.234 4.284L14.314 24h7.37L10.235 12.553z" fill="#29B6F6"/></svg></span>
+                        <div><span class="yk-name">Flutter & Dart</span><span class="yk-cat">Cross-Platform</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.20s">
-    <div class="yk-left">
-        <span class="yk-icon">
-            <svg width="28" height="28" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                <path d="M63.7 121.7c-33.6 0-58.7-18.7-58.7-46.7 0-33.8 45.4-36.6 45.4-56.1 0-7.3-6.5-11.7-17-11.7-11.8 0-23.7 4.1-33.8 11.7L9.4 12.3c11.9-9.7 28.1-15.3 47.4-15.3 31.7 0 51.5 18.2 51.5 45.7 0 35.5-45.4 38.3-45.4 56.4 0 7.7 8.3 12.4 18.2 12.4 13.5 0 27.5-5.3 37.9-14l10.2 16.5c-12.7 11.2-31.4 17.7-55.5 17.7z" fill="#DC322F"/>
-            </svg>
-        </span>
-        <div><span class="yk-name">Scala</span><span class="yk-cat">Functional Programming</span></div>
-    </div>
-    <div class="yk-right">
-        <div class="progress-bar"><div class="progress-fill" data-width="55"></div></div>
-        <span class="seviye-etiket orta">Orta</span>
-    </div>
-</div>
-        
-        <div class="yetenek-karti reveal" style="transition-delay:0.25s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFCA28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 5a9 3 0 0 1 18 0v14a9 3 0 0 1-18 0V5z"/>
-                        <path d="M3 5c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
-                        <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">NoSQL & Firebase</span><span class="yk-cat">BaaS & Database</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                <span class="seviye-etiket orta">Orta</span>
-            </div>
-        </div>
+                <div class="yetenek-karti reveal" style="transition-delay:0.10s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/><path d="M12 10v4"/></svg></span>
+                        <div><span class="yk-name">RESTful API & JSON</span><span class="yk-cat">Network & Data</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.30s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E84D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="18" r="3"/>
-                        <circle cx="6" cy="6" r="3"/>
-                        <circle cx="18" cy="6" r="3"/>
-                        <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/>
-                        <path d="M12 12v3"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">Git & GitHub</span><span class="yk-cat">Version Control</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                <span class="seviye-etiket orta">Orta</span>
-            </div>
-        </div>
+                <div class="yetenek-karti reveal" style="transition-delay:0.15s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f89820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                        <div><span class="yk-name">Java & OOP</span><span class="yk-cat">Core Concepts</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+                        <span class="seviye-etiket ileri">İleri</span>
+                    </div>
+                </div>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.35s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"/>
-                        <polyline points="8 6 2 12 8 18"/>
-                        <line x1="12" y1="2" x2="12" y2="22"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">Dev Tools</span><span class="yk-cat">Xcode, VS Code</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                <span class="seviye-etiket orta">Orta</span>
-            </div>
-        </div>
+                <div class="yetenek-karti reveal" style="transition-delay:0.20s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 128 128"><path d="M63.7 121.7c-33.6 0-58.7-18.7-58.7-46.7 0-33.8 45.4-36.6 45.4-56.1 0-7.3-6.5-11.7-17-11.7-11.8 0-23.7 4.1-33.8 11.7L9.4 12.3c11.9-9.7 28.1-15.3 47.4-15.3 31.7 0 51.5 18.2 51.5 45.7 0 35.5-45.4 38.3-45.4 56.4 0 7.7 8.3 12.4 18.2 12.4 13.5 0 27.5-5.3 37.9-14l10.2 16.5c-12.7 11.2-31.4 17.7-55.5 17.7z" fill="#DC322F"/></svg></span>
+                        <div><span class="yk-name">Scala</span><span class="yk-cat">Functional Programming</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="55"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
 
-        <div class="yetenek-karti reveal" style="transition-delay:0.40s">
-            <div class="yk-left">
-                <span class="yk-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9b4f96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                    </svg>
-                </span>
-                <div><span class="yk-name">C# & .NET</span><span class="yk-cat">Game Dev Base</span></div>
-            </div>
-            <div class="yk-right">
-                <div class="progress-bar"><div class="progress-fill" data-width="40"></div></div>
-                <span class="seviye-etiket temel">Temel</span>
-            </div>
-        </div>
-        
-    </div>
-</section>
+                <div class="yetenek-karti reveal" style="transition-delay:0.25s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFCA28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a9 3 0 0 1 18 0v14a9 3 0 0 1-18 0V5z"/><path d="M3 5c0 1.66 4.03 3 9 3s9-1.34 9-3"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg></span>
+                        <div><span class="yk-name">NoSQL & Firebase</span><span class="yk-cat">BaaS & Database</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
 
+                <div class="yetenek-karti reveal" style="transition-delay:0.30s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E84D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg></span>
+                        <div><span class="yk-name">Git & GitHub</span><span class="yk-cat">Version Control</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
+
+                <div class="yetenek-karti reveal" style="transition-delay:0.35s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg></span>
+                        <div><span class="yk-name">Dev Tools</span><span class="yk-cat">Xcode, VS Code</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
+                        <span class="seviye-etiket orta">Orta</span>
+                    </div>
+                </div>
+
+                <div class="yetenek-karti reveal" style="transition-delay:0.40s">
+                    <div class="yk-left">
+                        <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9b4f96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                        <div><span class="yk-name">C# & .NET</span><span class="yk-cat">Game Dev Base</span></div>
+                    </div>
+                    <div class="yk-right">
+                        <div class="progress-bar"><div class="progress-fill" data-width="40"></div></div>
+                        <span class="seviye-etiket temel">Temel</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERTİFİKALAR -->
         <section id="sertifikalar">
             <p class="section-label reveal">// Sürekli Gelişim</p>
             <h2 class="section-title reveal">Sertifikalarım & Belgelerim</h2>
             <p class="section-desc reveal">Eğitim hayatım, sektör deneyimlerim ve global vizyonumu destekleyen yetkinlik belgelerim.</p>
-            
+
             <div class="sertifika-grid">
-                
+
                 <div class="sertifika-karti reveal" style="transition-delay:0s">
                     <div class="sk-icon">💼</div>
                     <div class="sk-icerik">
@@ -363,16 +333,21 @@
             </div>
         </section>
 
-        <<section id="projeler">
+        <!-- PROJELER -->
+        <section id="projeler">
             <p class="section-label reveal">// Çalışmalarım</p>
             <h2 class="section-title reveal">Projelerim</h2>
             <p class="section-desc reveal">Üzerinde çalıştığım, mimarilerini kurduğum ve GitHub'da paylaştığım projelerim.</p>
-            
+
             <div class="proje-grid">
-                
+
+                <!-- KampüsCÜ -->
                 <div class="proje-karti reveal" style="transition-delay:0s">
                     <div class="proje-mockup">
                         <img src="images/kampuscu.png" alt="KampüsCÜ App" class="proje-resim">
+                        <div class="proje-overlay">
+                            <a href="https://github.com/osmanbabayigit/kampuscu-app" target="_blank" class="overlay-btn">GitHub'da Gör →</a>
+                        </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
@@ -387,23 +362,24 @@
                             <span class="proje-tag">NoSQL</span>
                         </div>
                         <a href="https://github.com/osmanbabayigit/kampuscu-app" class="github-link" target="_blank">
-                            GitHub'da İncele 
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            GitHub'da İncele
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
+                <!-- Spotify Klon UI -->
                 <div class="proje-karti reveal" style="transition-delay:0.1s">
                     <div class="proje-mockup">
-                        <img src="spotify.png" alt="Spotify UI Clone" class="proje-resim">
+                        <img src="images/SpotifyUI.png" alt="Spotify UI Clone" class="proje-resim">
+                        <div class="proje-overlay">
+                            <a href="#" class="overlay-btn">GitHub'da Gör →</a>
+                        </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
                             <h3>Spotify Klon UI</h3>
-                            <div class="proje-status active"><span class="status-dot"></span> Tamamlandı</div>
+                            <div class="proje-status"><span class="status-dot yellow"></span> Geliştiriliyor</div>
                         </div>
                         <p>iOS ekosistemi için SwiftUI kullanılarak tasarlanmış, animasyonlu geçişlere sahip, piksel mükemmelliğinde Spotify arayüz kopyası.</p>
                         <div class="proje-tags">
@@ -413,119 +389,112 @@
                             <span class="proje-tag">Animations</span>
                         </div>
                         <a href="#" class="github-link" target="_blank">
-                            GitHub'da İncele 
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            GitHub'da İncele
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
+                <!-- Nordes -->
                 <div class="proje-karti reveal" style="transition-delay:0.2s">
                     <div class="proje-mockup">
-                        <img src="weather.png" alt="Hava Durumu App" class="proje-resim">
+                        <img src="images/NordesUI.jpeg" alt="Nordes App" class="proje-resim">
+                        <div class="proje-overlay">
+                            <a href="#" class="overlay-btn">GitHub'da Gör →</a>
+                        </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
-                            <h3>Hava Durumu API</h3>
+                            <h3>Nordes</h3>
                             <div class="proje-status"><span class="status-dot yellow"></span> Geliştiriliyor</div>
                         </div>
-                        <p>Canlı REST API entegrasyonu ile anlık hava verisi çeken, cihazın anlık konumunu (CoreLocation) kullanan şık arayüzlü iOS uygulaması.</p>
+                        <p>Bütçe takibi, yapılacaklar listesi, not alma ve okuduğun kitapları kayıt altına alabileceğin; günlük yaşamı tek çatı altında toplayan kişisel verimlilik iOS uygulaması.</p>
                         <div class="proje-tags">
                             <span class="proje-tag">Swift</span>
-                            <span class="proje-tag">REST API</span>
-                            <span class="proje-tag">CoreLocation</span>
-                            <span class="proje-tag">JSON</span>
+                            <span class="proje-tag">SwiftUI</span>
+                            <span class="proje-tag">CoreData</span>
+                            <span class="proje-tag">iOS</span>
                         </div>
                         <a href="#" class="github-link" target="_blank">
-                            GitHub'da İncele 
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            GitHub'da İncele
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- İLETİŞİM -->
         <section id="iletisim">
             <div class="iletisim-wrapper">
                 <div class="iletisim-sol reveal-left">
                     <p class="section-label">// Konuşalım</p>
                     <h2 class="section-title">Bir Fikrin mi Var?</h2>
                     <p class="section-desc" style="margin-bottom:40px">Proje teklifi, staj görüşmesi ya da sadece merhaba demek için — her zaman açığım. En geç 24 saat içinde dönüş yapacağım.</p>
-                    
+
                     <div class="iletisim-info-list">
                         <a href="mailto:osmanbabayigit01@icloud.com" class="iletisim-info-item">
                             <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 0.9 2 2v12c0 1.1-0.9 2-2 2H4c-1.1 0-2-0.9-2-2V6c0-1.1 0.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 0.9 2 2v12c0 1.1-0.9 2-2 2H4c-1.1 0-2-0.9-2-2V6c0-1.1 0.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
                             <div class="ii-text">
                                 <span class="ii-label">E-Posta</span>
                                 <span class="ii-value">osmanbabayigit01@icloud.com</span>
                             </div>
+                            <svg class="ii-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
+
                         <a href="https://github.com/osmanbabayigit" target="_blank" class="iletisim-info-item">
                             <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-0.94-2.61c3.14-0.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73 0.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27 0.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-0.94-2.61c3.14-0.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73 0.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27 0.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                             </div>
                             <div class="ii-text">
                                 <span class="ii-label">GitHub</span>
                                 <span class="ii-value">github.com/osmanbabayigit</span>
                             </div>
+                            <svg class="ii-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
+
                         <a href="https://www.linkedin.com/in/osman-babayigit/" target="_blank" class="iletisim-info-item">
                             <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                    <rect x="2" y="9" width="4" height="12"/>
-                                    <circle cx="4" cy="4" r="2"/>
-                                </svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             </div>
                             <div class="ii-text">
                                 <span class="ii-label">LinkedIn</span>
                                 <span class="ii-value">linkedin.com/in/osmanbabayigit</span>
                             </div>
+                            <svg class="ii-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="iletisim-sag reveal-right">
                     <form class="iletisim-form" id="my-form" onsubmit="handleForm(event)">
-    <div class="form-group">
-        <label>İsim</label>
-        <input type="text" name="name" placeholder="Adın Soyadın" required>
-    </div>
-    <div class="form-group">
-        <label>E-Posta</label>
-        <input type="email" name="email" placeholder="ornek@email.com" required>
-    </div>
-    <div class="form-group">
-        <label>Konu</label>
-        <input type="text" name="subject" placeholder="Proje hakkında...">
-    </div>
-    <div class="form-group">
-        <label>Mesaj</label>
-        <textarea name="message" placeholder="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary form-submit" id="formBtn">
-        Gönder
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
-    </button>
-    <div id="form-success" class="form-success" style="display:none; color: #00ff88; margin-top: 15px; font-weight: 500;">
-        ✅ Mesajın alındı! En kısa sürede dönüş yapacağım.
-    </div>
-</form>
+                        <div class="form-group">
+                            <label>İsim</label>
+                            <input type="text" name="name" placeholder="Adın Soyadın" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Posta</label>
+                            <input type="email" name="email" placeholder="ornek@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Konu</label>
+                            <input type="text" name="subject" placeholder="Proje hakkında...">
+                        </div>
+                        <div class="form-group">
+                            <label>Mesaj</label>
+                            <textarea name="message" placeholder="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit" id="formBtn">
+                            Gönder
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </button>
+                        <div id="form-success" class="form-success" style="display:none;">
+                            ✅ Mesajın alındı! En kısa sürede dönüş yapacağım.
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -541,7 +510,7 @@
 
     <footer>
         <div class="footer-inner">
-            <div class="footer-logo">Osman<span> Babayiğit.</span></div>
+            <div class="footer-logo"><span class="logo-bracket">&lt;</span>OB<span class="logo-bracket">/&gt;</span></div>
             <p class="footer-tagline">Design is not just what it looks like. Design is how it works.</p>
             <div class="footer-links">
                 <a href="https://github.com/osmanbabayigit" target="_blank">GitHub</a>
@@ -551,6 +520,7 @@
             <p class="footer-copy">© 2026 Osman Babayiğit — Designed & Built with ♥</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 
 </body>
