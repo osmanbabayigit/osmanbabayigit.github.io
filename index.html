@@ -20,97 +20,109 @@
                 <span class="logo-bracket">&lt;</span>OB<span class="logo-bracket">/&gt;</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#giris" data-section="giris">Giriş</a></li>
-                <li><a href="#hakkimda" data-section="hakkimda">Hakkımda</a></li>
-                <li><a href="#yetenekler" data-section="yetenekler">Yetenekler</a></li>
-                <li><a href="#sertifikalar" data-section="sertifikalar">Sertifikalar</a></li>
-                <li><a href="#projeler" data-section="projeler">Projeler</a></li>
-                <li><a href="#iletisim" data-section="iletisim" class="nav-cta">İletişim</a></li>
+                <li><a href="#giris" data-section="giris" data-tr="Giriş" data-en="Home">Giriş</a></li>
+                <li><a href="#hakkimda" data-section="hakkimda" data-tr="Hakkımda" data-en="About">Hakkımda</a></li>
+                <li><a href="#yetenekler" data-section="yetenekler" data-tr="Yetenekler" data-en="Skills">Yetenekler</a></li>
+                <li><a href="#sertifikalar" data-section="sertifikalar" data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</a></li>
+                <li><a href="#projeler" data-section="projeler" data-tr="Projeler" data-en="Projects">Projeler</a></li>
+                <li><a href="#iletisim" data-section="iletisim" class="nav-cta" data-tr="İletişim" data-en="Contact">İletişim</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
+            <div class="header-right">
+                <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#giris" onclick="closeMobile()">Giriş</a>
-        <a href="#hakkimda" onclick="closeMobile()">Hakkımda</a>
-        <a href="#yetenekler" onclick="closeMobile()">Yetenekler</a>
-        <a href="#sertifikalar" onclick="closeMobile()">Sertifikalar</a>
-        <a href="#projeler" onclick="closeMobile()">Projeler</a>
-        <a href="#iletisim" onclick="closeMobile()">İletişim</a>
+        <a href="#giris" onclick="closeMobile()" data-tr="Giriş" data-en="Home">Giriş</a>
+        <a href="#hakkimda" onclick="closeMobile()" data-tr="Hakkımda" data-en="About">Hakkımda</a>
+        <a href="#yetenekler" onclick="closeMobile()" data-tr="Yetenekler" data-en="Skills">Yetenekler</a>
+        <a href="#sertifikalar" onclick="closeMobile()" data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</a>
+        <a href="#projeler" onclick="closeMobile()" data-tr="Projeler" data-en="Projects">Projeler</a>
+        <a href="#iletisim" onclick="closeMobile()" data-tr="İletişim" data-en="Contact">İletişim</a>
     </div>
 
     <main>
 
-        <!-- GİRİŞ -->
         <section id="giris">
             <div class="hero-noise"></div>
             <div class="hero-content">
                 <div class="hero-badge reveal-fade">
-                    <span class="badge-dot"></span>Staj Fırsatlarına Açık
+                    <span class="badge-dot"></span>
+                    <span data-tr="Staj Fırsatlarına Açık" data-en="Open to Internship Opportunities">Staj Fırsatlarına Açık</span>
                 </div>
                 <h1 class="reveal-fade" style="transition-delay:0.1s">
-                    Merhaba, Ben<br><span class="vurgu gradient-text">Osman Babayiğit</span>
+                    <span data-tr="Merhaba, Ben" data-en="Hi, I'm">Merhaba, Ben</span><br>
+                    <span class="vurgu gradient-text">Osman Babayiğit</span>
                 </h1>
                 <div class="hero-role reveal-fade" style="transition-delay:0.2s">
                     <span id="typed-text"></span><span class="typed-cursor">|</span>
                 </div>
-                <p class="reveal-fade" style="transition-delay:0.3s">
+                <p class="reveal-fade" style="transition-delay:0.3s" data-tr="Yazılım dünyasında estetik ve fonksiyonelliği bir araya getiren çözümler üretmeye odaklıyım. Öğrenme tutkumla geleceğin teknolojilerini keşfediyorum." data-en="Focused on building solutions that blend aesthetics and functionality in the world of software. Exploring tomorrow's technologies with a passion for learning.">
                     Yazılım dünyasında estetik ve fonksiyonelliği bir araya getiren çözümler üretmeye odaklıyım. Öğrenme tutkumla geleceğin teknolojilerini keşfediyorum.
                 </p>
                 <div class="hero-buttons reveal-fade" style="transition-delay:0.4s">
                     <a href="#projeler" class="btn btn-primary">
-                        <span>Projelerimi Gör</span>
+                        <span data-tr="Projelerimi Gör" data-en="View My Projects">Projelerimi Gör</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
-                    <a href="#hakkimda" class="btn btn-secondary">Daha Fazla</a>
+                    <a href="#hakkimda" class="btn btn-secondary" data-tr="Daha Fazla" data-en="Learn More">Daha Fazla</a>
+                    <a href="cv/osman-babayigit-cv.pdf" download class="btn btn-cv">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span data-tr="CV İndir" data-en="Download CV">CV İndir</span>
+                    </a>
                 </div>
                 <div class="hero-stats reveal-fade" style="transition-delay:0.5s">
                     <div class="stat">
-                        <span class="stat-num">3+</span>
-                        <span class="stat-label">Tamamlanan Proje</span>
+                        <span class="stat-num">3</span>
+                        <span class="stat-label" data-tr="Tamamlanan Proje" data-en="Completed Projects">Tamamlanan Proje</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat">
                         <span class="stat-num">5</span>
-                        <span class="stat-label">Teknoloji Yığını</span>
+                        <span class="stat-label" data-tr="Teknoloji Yığını" data-en="Tech Stack">Teknoloji Yığını</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat">
-                        <span class="stat-num">B2</span>
-                        <span class="stat-label">İngilizce Seviyesi</span>
+                        <span class="stat-num" data-nocount="true">B2</span>
+                        <span class="stat-label" data-tr="İngilizce Seviyesi" data-en="English Level">İngilizce Seviyesi</span>
                     </div>
                 </div>
             </div>
             <div class="scroll-hint">
-                <span class="scroll-text">Keşfet</span>
+                <span class="scroll-text" data-tr="Keşfet" data-en="Explore">Keşfet</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
 
-        <!-- HAKKIMDA -->
         <section id="hakkimda">
             <div class="hakkimda-container">
                 <div class="hakkimda-metin reveal-left">
-                    <p class="section-label">// Ben Kimim</p>
-                    <h2 class="section-title">Hakkımda</h2>
-                    <p>Yazılım serüvenim, eski bir oyuncu olarak <span class="highlight">"kendi dünyamı inşa etme"</span> hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz <span class="highlight">özgürlük hissi</span>, bu alana olan tutkumu ateşledi.</p>
-                    <p>Şu anda ağırlıklı olarak <span class="highlight">Swift</span> ile iOS ekosistemine odaklanırken, çapraz platform için <span class="highlight">Flutter (Dart)</span> ile yeni fikirler deniyorum. Bir projede ana hedefim her zaman; karmaşıklıktan uzak, optimize edilmiş ve <span class="highlight">estetik açıdan şık</span> bir iş ortaya çıkarmaktır.</p>
-                    <p>Hayatımın en büyük dönüm noktası, Polonya'nın köklü kurumu <span class="highlight">AGH Bilim ve Teknoloji Üniversitesi</span>'nde geçirdiğim 5 aylık Erasmus+ süreci oldu. Kraków'da farklı uluslarla ortak projeler yürütürken <span class="highlight">Scala</span> diliyle fonksiyonel programlamaya adım attım. İleride asıl mesleğim olmasını hayal ettiğim <span class="highlight">Game Development</span> ise beni besleyen en büyük tutkum.</p>
+                    <p class="section-label" data-tr="// Ben Kimim" data-en="// Who I Am">// Ben Kimim</p>
+                    <h2 class="section-title" data-tr="Hakkımda" data-en="About Me">Hakkımda</h2>
+                    <p data-tr="Yazılım serüvenim, eski bir oyuncu olarak &quot;kendi dünyamı inşa etme&quot; hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz özgürlük hissi, bu alana olan tutkumu ateşledi." data-en="My software journey began with the dream of &quot;building my own world&quot; as a former gamer. That unique sense of freedom — adding whatever features I wanted to a structure I designed myself — ignited my passion for this field.">
+    Yazılım serüvenim, eski bir oyuncu olarak "kendi dünyamı inşa etme" hayaliyle başladı. Kendi tasarladığım bir yapıya istediğim özellikleri ekleyebilmenin verdiği o eşsiz özgürlük hissi, bu alana olan tutkumu ateşledi.
+</p>
+<p data-tr="Şu anda ağırlıklı olarak Swift ile iOS ekosistemine odaklanırken, çapraz platform için Flutter (Dart) ile yeni fikirler deniyorum. Bir projede ana hedefim her zaman; karmaşıklıktan uzak, optimize edilmiş ve estetik açıdan şık bir iş ortaya çıkarmaktır." data-en="I'm currently focused on the iOS ecosystem with Swift, while experimenting with new ideas using Flutter (Dart) for cross-platform. My main goal in any project is always to deliver something clean, optimized, and aesthetically refined.">
+    Şu anda ağırlıklı olarak Swift ile iOS ekosistemine odaklanırken, çapraz platform için Flutter (Dart) ile yeni fikirler deniyorum. Bir projede ana hedefim her zaman; karmaşıklıktan uzak, optimize edilmiş ve estetik açıdan şık bir iş ortaya çıkarmaktır.
+</p>
+<p data-tr="Hayatımın en büyük dönüm noktası, Polonya'nın köklü kurumu AGH Bilim ve Teknoloji Üniversitesi'nde geçirdiğim 5 aylık Erasmus+ süreci oldu. Kraków'da farklı uluslarla ortak projeler yürütürken Scala diliyle fonksiyonel programlamaya adım attım. İleride asıl mesleğim olmasını hayal ettiğim Game Development ise beni besleyen en büyük tutkum." data-en="The biggest turning point in my life was the 5-month Erasmus+ experience at AGH University of Science and Technology in Kraków, Poland. While collaborating on projects with people from different nations, I took my first steps into functional programming with Scala. Game Development, which I dream of making my main profession someday, remains my greatest passion.">
+    Hayatımın en büyük dönüm noktası, Polonya'nın köklü kurumu AGH Bilim ve Teknoloji Üniversitesi'nde geçirdiğim 5 aylık Erasmus+ süreci oldu. Kraków'da farklı uluslarla ortak projeler yürütürken Scala diliyle fonksiyonel programlamaya adım attım. İleride asıl mesleğim olmasını hayal ettiğim Game Development ise beni besleyen en büyük tutkum.
+</p>
                     <div class="hakkimda-tags">
-                        <span class="htag">🌍 Erasmus+ Katılımcısı</span>
-                        <span class="htag">🎮 Oyun Tutkunu</span>
-                        <span class="htag">🎵 Müzik Keşifçisi</span>
-                        <span class="htag">✨ Anime İzleyici</span>
-                        <span class="htag">🚀 Büyük Hayaller</span>
-                    </div>
+    <span class="htag" data-tr="🌍 Erasmus+ Katılımcısı" data-en="🌍 Erasmus+ Participant">🌍 Erasmus+ Katılımcısı</span>
+    <span class="htag" data-tr="🎮 Oyun Tutkunu" data-en="🎮 Gaming Enthusiast">🎮 Oyun Tutkunu</span>
+    <span class="htag" data-tr="🎵 Müzik Keşifçisi" data-en="🎵 Music Explorer">🎵 Müzik Keşifçisi</span>
+    <span class="htag" data-tr="✨ Anime İzleyici" data-en="✨ Anime Watcher">✨ Anime İzleyici</span>
+    <span class="htag" data-tr="🚀 Büyük Hayaller" data-en="🚀 Big Dreams">🚀 Büyük Hayaller</span>
+</div>
                 </div>
 
                 <div class="hakkimda-gorsel reveal-right">
                     <div class="bento-container">
-                        <!-- Swift -->
                         <div class="bento-item tech-box swift-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +132,6 @@
                             <span class="tech-label">Swift</span>
                             <span class="tech-sub">iOS · macOS</span>
                         </div>
-                        <!-- Flutter -->
                         <div class="bento-item tech-box flutter-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +143,6 @@
                             <span class="tech-label">Flutter</span>
                             <span class="tech-sub">Cross-Platform</span>
                         </div>
-                        <!-- C# -->
                         <div class="bento-item tech-box cs-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +154,6 @@
                             <span class="tech-label">C# / .NET</span>
                             <span class="tech-sub">Visual Studio</span>
                         </div>
-                        <!-- Game Dev -->
                         <div class="bento-item tech-box code-box">
                             <div class="b-icon">
                                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,14 +176,12 @@
             </div>
         </section>
 
-        <!-- YETENEKLER -->
         <section id="yetenekler">
-            <p class="section-label reveal">// Araç Setim</p>
-            <h2 class="section-title reveal">Yetenekler</h2>
-            <p class="section-desc reveal">Projelerimde aktif olarak kullandığım teknolojiler ve mimariler.</p>
+            <p class="section-label reveal" data-tr="// Araç Setim" data-en="// My Toolkit">// Araç Setim</p>
+            <h2 class="section-title reveal" data-tr="Yetenekler" data-en="Skills">Yetenekler</h2>
+            <p class="section-desc reveal" data-tr="Projelerimde aktif olarak kullandığım teknolojiler ve mimariler." data-en="Technologies and architectures I actively use in my projects.">Projelerimde aktif olarak kullandığım teknolojiler ve mimariler.</p>
 
             <div class="yetenek-grid">
-
                 <div class="yetenek-karti reveal" style="transition-delay:0s">
                     <div class="yk-left">
                         <span class="yk-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="#F05138"><path d="M16.5 2.5c-.3.4-.6.9-.9 1.4-2.8 5.7-9.5 11.2-16.6 11.2-.5 0-.9-.1-1.4-.2 2.2 3.8 6.5 6.3 11.2 6.3 4.2 0 8.1-1.9 10.7-5.1.7-.9 1.4-1.9 2-2.9-2.1.2-4.3-.4-6.1-1.7 3.3-2.6 5.5-6.5 5.5-10.8 0-.4-.1-.8-.1-1.2-1.3 1.1-2.9 1.8-4.6 2C15.8 4.3 16.2 3.4 16.5 2.5z"/></svg></span>
@@ -182,7 +189,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
-                        <span class="seviye-etiket ileri">İleri</span>
+                        <span class="seviye-etiket ileri" data-tr="İleri" data-en="Advanced">İleri</span>
                     </div>
                 </div>
 
@@ -193,7 +200,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
-                        <span class="seviye-etiket ileri">İleri</span>
+                        <span class="seviye-etiket ileri" data-tr="İleri" data-en="Advanced">İleri</span>
                     </div>
                 </div>
 
@@ -204,7 +211,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
-                        <span class="seviye-etiket ileri">İleri</span>
+                        <span class="seviye-etiket ileri" data-tr="İleri" data-en="Advanced">İleri</span>
                     </div>
                 </div>
 
@@ -215,7 +222,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
-                        <span class="seviye-etiket ileri">İleri</span>
+                        <span class="seviye-etiket ileri" data-tr="İleri" data-en="Advanced">İleri</span>
                     </div>
                 </div>
 
@@ -226,7 +233,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="55"></div></div>
-                        <span class="seviye-etiket orta">Orta</span>
+                        <span class="seviye-etiket orta" data-tr="Orta" data-en="Intermediate">Orta</span>
                     </div>
                 </div>
 
@@ -237,7 +244,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                        <span class="seviye-etiket orta">Orta</span>
+                        <span class="seviye-etiket orta" data-tr="Orta" data-en="Intermediate">Orta</span>
                     </div>
                 </div>
 
@@ -248,7 +255,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                        <span class="seviye-etiket orta">Orta</span>
+                        <span class="seviye-etiket orta" data-tr="Orta" data-en="Intermediate">Orta</span>
                     </div>
                 </div>
 
@@ -259,7 +266,7 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
-                        <span class="seviye-etiket orta">Orta</span>
+                        <span class="seviye-etiket orta" data-tr="Orta" data-en="Intermediate">Orta</span>
                     </div>
                 </div>
 
@@ -270,91 +277,85 @@
                     </div>
                     <div class="yk-right">
                         <div class="progress-bar"><div class="progress-fill" data-width="40"></div></div>
-                        <span class="seviye-etiket temel">Temel</span>
+                        <span class="seviye-etiket temel" data-tr="Temel" data-en="Basic">Temel</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- SERTİFİKALAR -->
         <section id="sertifikalar">
-            <p class="section-label reveal">// Sürekli Gelişim</p>
-            <h2 class="section-title reveal">Sertifikalarım & Belgelerim</h2>
-            <p class="section-desc reveal">Eğitim hayatım, sektör deneyimlerim ve global vizyonumu destekleyen yetkinlik belgelerim.</p>
+            <p class="section-label reveal" data-tr="// Sürekli Gelişim" data-en="// Continuous Growth">// Sürekli Gelişim</p>
+            <h2 class="section-title reveal" data-tr="Sertifikalarım & Belgelerim" data-en="Certificates & Documents">Sertifikalarım & Belgelerim</h2>
+            <p class="section-desc reveal" data-tr="Eğitim hayatım, sektör deneyimlerim ve global vizyonumu destekleyen yetkinlik belgelerim." data-en="Competency documents supporting my education, industry experience, and global vision.">Eğitim hayatım, sektör deneyimlerim ve global vizyonumu destekleyen yetkinlik belgelerim.</p>
 
             <div class="sertifika-grid">
-
                 <div class="sertifika-karti reveal" style="transition-delay:0s">
                     <div class="sk-icon">💼</div>
                     <div class="sk-icerik">
-                        <h3>Bilgi Teknolojileri (IT) Stajı</h3>
+                        <h3 data-tr="Bilgi Teknolojileri (IT) Stajı" data-en="Information Technologies (IT) Internship">Bilgi Teknolojileri (IT) Stajı</h3>
                         <span>TNC Group</span>
                     </div>
-                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1140667355/multiple-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM&treasuryMediaId=1757782291853" class="sk-link" target="_blank">İncele ↗</a>
+                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1140667355/multiple-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM&treasuryMediaId=1757782291853" class="sk-link" target="_blank" data-tr="İncele ↗" data-en="View ↗">İncele ↗</a>
                 </div>
 
                 <div class="sertifika-karti reveal" style="transition-delay:0.1s">
                     <div class="sk-icon">🤝</div>
                     <div class="sk-icerik">
-                        <h3>Referans Mektubu</h3>
+                        <h3 data-tr="Referans Mektubu" data-en="Reference Letter">Referans Mektubu</h3>
                         <span>TNC Group</span>
                     </div>
-                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1140667355/multiple-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM&treasuryMediaId=1757783710396" class="sk-link" target="_blank">İncele ↗</a>
+                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1140667355/multiple-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM&treasuryMediaId=1757783710396" class="sk-link" target="_blank" data-tr="İncele ↗" data-en="View ↗">İncele ↗</a>
                 </div>
 
                 <div class="sertifika-karti reveal" style="transition-delay:0.2s">
                     <div class="sk-icon">🌍</div>
                     <div class="sk-icerik">
-                        <h3>Erasmus+ Katılım Belgesi</h3>
-                        <span>Avrupa Birliği Öğrenci Değişim Programı</span>
+                        <h3 data-tr="Erasmus+ Katılım Belgesi" data-en="Erasmus+ Participation Certificate">Erasmus+ Katılım Belgesi</h3>
+                        <span data-tr="Avrupa Birliği Öğrenci Değişim Programı" data-en="European Union Student Exchange Program">Avrupa Birliği Öğrenci Değişim Programı</span>
                     </div>
-                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563395640/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank">İncele ↗</a>
+                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563395640/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank" data-tr="İncele ↗" data-en="View ↗">İncele ↗</a>
                 </div>
 
                 <div class="sertifika-karti reveal" style="transition-delay:0.3s">
                     <div class="sk-icon">🇬🇧</div>
                     <div class="sk-icerik">
-                        <h3>B2 İngilizce Dil Yeterliliği</h3>
+                        <h3 data-tr="B2 İngilizce Dil Yeterliliği" data-en="B2 English Language Proficiency">B2 İngilizce Dil Yeterliliği</h3>
                         <span>Erasmus+ Language Assessment</span>
                     </div>
-                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563088981/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank">İncele ↗</a>
+                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563088981/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank" data-tr="İncele ↗" data-en="View ↗">İncele ↗</a>
                 </div>
 
                 <div class="sertifika-karti reveal" style="transition-delay:0.4s">
                     <div class="sk-icon">🇫🇷</div>
                     <div class="sk-icerik">
-                        <h3>A2 Fransızca Dil Belgesi</h3>
-                        <span>Yabancı Dil Yeterlilik</span>
+                        <h3 data-tr="A2 Fransızca Dil Belgesi" data-en="A2 French Language Certificate">A2 Fransızca Dil Belgesi</h3>
+                        <span data-tr="Yabancı Dil Yeterlilik" data-en="Foreign Language Proficiency">Yabancı Dil Yeterlilik</span>
                     </div>
-                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563176571/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank">İncele ↗</a>
+                    <a href="https://www.linkedin.com/in/osman-babayigit/details/certifications/1773563176571/single-media-viewer/?profileId=ACoAAEb27m8BwXPnagc011BQMtHzqUEiDovdyzM" class="sk-link" target="_blank" data-tr="İncele ↗" data-en="View ↗">İncele ↗</a>
                 </div>
-
             </div>
         </section>
 
-        <!-- PROJELER -->
         <section id="projeler">
-            <p class="section-label reveal">// Çalışmalarım</p>
-            <h2 class="section-title reveal">Projelerim</h2>
-            <p class="section-desc reveal">Üzerinde çalıştığım, mimarilerini kurduğum ve GitHub'da paylaştığım projelerim.</p>
+            <p class="section-label reveal" data-tr="// Çalışmalarım" data-en="// My Work">// Çalışmalarım</p>
+            <h2 class="section-title reveal" data-tr="Projelerim" data-en="Projects">Projelerim</h2>
+            <p class="section-desc reveal" data-tr="Üzerinde çalıştığım, mimarilerini kurduğum ve GitHub'da paylaştığım projelerim." data-en="Projects I've built, architected, and shared on GitHub.">Üzerinde çalıştığım, mimarilerini kurduğum ve GitHub'da paylaştığım projelerim.</p>
 
             <div class="proje-grid">
 
-                <!-- KampüsCÜ -->
                 <div class="proje-karti reveal" style="transition-delay:0s">
                     <div class="proje-mockup">
                         <img src="images/kampuscu.png" alt="KampüsCÜ App" class="proje-resim">
                         <div class="proje-overlay">
-                            <a href="https://github.com/osmanbabayigit/kampuscu-app" target="_blank" class="overlay-btn">GitHub'da Gör →</a>
+                            <a href="https://github.com/osmanbabayigit/kampuscu-app" target="_blank" class="overlay-btn" data-tr="GitHub'da Gör →" data-en="View on GitHub →">GitHub'da Gör →</a>
                         </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
                             <h3>KampüsCÜ</h3>
-                            <div class="proje-status active"><span class="status-dot"></span> Tamamlandı</div>
+                            <div class="proje-status active"><span class="status-dot"></span> <span data-tr="Tamamlandı" data-en="Completed">Tamamlandı</span></div>
                         </div>
-                        <p>Flutter ve Firebase kullanılarak geliştirilen kampüs içi sosyal etkileşim ve konum tabanlı Android uygulaması. Google API entegrasyonu içerir.</p>
+                        <p data-tr="Flutter ve Firebase kullanılarak geliştirilen kampüs içi sosyal etkileşim ve konum tabanlı Android uygulaması. Google API entegrasyonu içerir." data-en="A location-based Android app built with Flutter and Firebase for campus social interaction. Includes Google Maps API integration.">Flutter ve Firebase kullanılarak geliştirilen kampüs içi sosyal etkileşim ve konum tabanlı Android uygulaması. Google API entegrasyonu içerir.</p>
                         <div class="proje-tags">
                             <span class="proje-tag">Flutter</span>
                             <span class="proje-tag">Firebase</span>
@@ -362,53 +363,58 @@
                             <span class="proje-tag">NoSQL</span>
                         </div>
                         <a href="https://github.com/osmanbabayigit/kampuscu-app" class="github-link" target="_blank">
-                            GitHub'da İncele
+                            <span data-tr="GitHub'da İncele" data-en="View on GitHub">GitHub'da İncele</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Spotify Klon UI -->
                 <div class="proje-karti reveal" style="transition-delay:0.1s">
-                    <div class="proje-mockup">
-                        <img src="images/SpotifyUI.png" alt="Spotify UI Clone" class="proje-resim">
+                    <div class="proje-mockup" style="background:linear-gradient(135deg,#0a0f1a 0%,#0d1520 50%,#060c14 100%);display:flex;align-items:center;justify-content:center;">
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="4" fill="rgba(76,142,247,0.15)" stroke="rgba(76,142,247,0.4)" stroke-width="1.2"/>
+                                <path d="M7 8h10M7 12h6M7 16h8" stroke="#4C8EF7" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="17" cy="16" r="2.5" fill="#4C8EF7" opacity="0.8"/>
+                            </svg>
+                            <span style="font-size:0.65rem;font-weight:700;color:rgba(76,142,247,0.5);letter-spacing:2px;text-transform:uppercase;">macOS App</span>
+                        </div>
                         <div class="proje-overlay">
-                            <a href="#" class="overlay-btn">GitHub'da Gör →</a>
+                            <a href="https://github.com/osmanbabayigit/Ticker" target="_blank" class="overlay-btn" data-tr="GitHub'da Gör →" data-en="View on GitHub →">GitHub'da Gör →</a>
                         </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
-                            <h3>Spotify Klon UI</h3>
-                            <div class="proje-status"><span class="status-dot yellow"></span> Geliştiriliyor</div>
+                            <h3>Ticker</h3>
+                            <div class="proje-status"><span class="status-dot yellow"></span> <span data-tr="Geliştiriliyor" data-en="In Progress">Geliştiriliyor</span></div>
                         </div>
-                        <p>iOS ekosistemi için SwiftUI kullanılarak tasarlanmış, animasyonlu geçişlere sahip, piksel mükemmelliğinde Spotify arayüz kopyası.</p>
+                        <p data-tr="SwiftUI ve SwiftData ile geliştirilmiş native macOS görev yöneticisi. Sürükle & bırak destekli aylık takvim, öncelik sistemi ve global arama içerir." data-en="A native macOS task manager built with SwiftUI and SwiftData. Features drag & drop calendar, priority system and global search.">SwiftUI ve SwiftData ile geliştirilmiş native macOS görev yöneticisi. Sürükle & bırak destekli aylık takvim, öncelik sistemi ve global arama içerir.</p>
                         <div class="proje-tags">
                             <span class="proje-tag">Swift</span>
                             <span class="proje-tag">SwiftUI</span>
-                            <span class="proje-tag">UI/UX</span>
-                            <span class="proje-tag">Animations</span>
+                            <span class="proje-tag">SwiftData</span>
+                            <span class="proje-tag">macOS</span>
                         </div>
-                        <a href="#" class="github-link" target="_blank">
-                            GitHub'da İncele
+                        <a href="https://github.com/osmanbabayigit/Ticker" class="github-link" target="_blank">
+                            <span data-tr="GitHub'da İncele" data-en="View on GitHub">GitHub'da İncele</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Nordes -->
                 <div class="proje-karti reveal" style="transition-delay:0.2s">
                     <div class="proje-mockup">
                         <img src="images/NordesUI.jpeg" alt="Nordes App" class="proje-resim">
                         <div class="proje-overlay">
-                            <a href="#" class="overlay-btn">GitHub'da Gör →</a>
+                            <a href="#" class="overlay-btn" data-tr="GitHub'da Gör →" data-en="View on GitHub →">GitHub'da Gör →</a>
                         </div>
                     </div>
                     <div class="proje-icerik">
                         <div class="proje-header">
                             <h3>Nordes</h3>
-                            <div class="proje-status"><span class="status-dot yellow"></span> Geliştiriliyor</div>
+                            <div class="proje-status"><span class="status-dot yellow"></span> <span data-tr="Geliştiriliyor" data-en="In Progress">Geliştiriliyor</span></div>
                         </div>
-                        <p>Bütçe takibi, yapılacaklar listesi, not alma ve okuduğun kitapları kayıt altına alabileceğin; günlük yaşamı tek çatı altında toplayan kişisel verimlilik iOS uygulaması.</p>
+                        <p data-tr="Bütçe takibi, yapılacaklar listesi, not alma ve okuduğun kitapları kayıt altına alabileceğin; günlük yaşamı tek çatı altında toplayan kişisel verimlilik iOS uygulaması." data-en="A personal productivity iOS app combining budget tracking, to-do lists, note-taking and book logging under one roof.">Bütçe takibi, yapılacaklar listesi, not alma ve okuduğun kitapları kayıt altına alabileceğin; günlük yaşamı tek çatı altında toplayan kişisel verimlilik iOS uygulaması.</p>
                         <div class="proje-tags">
                             <span class="proje-tag">Swift</span>
                             <span class="proje-tag">SwiftUI</span>
@@ -416,7 +422,7 @@
                             <span class="proje-tag">iOS</span>
                         </div>
                         <a href="#" class="github-link" target="_blank">
-                            GitHub'da İncele
+                            <span data-tr="GitHub'da İncele" data-en="View on GitHub">GitHub'da İncele</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -425,30 +431,25 @@
             </div>
         </section>
 
-        <!-- İLETİŞİM -->
         <section id="iletisim">
             <div class="iletisim-wrapper">
                 <div class="iletisim-sol reveal-left">
-                    <p class="section-label">// Konuşalım</p>
-                    <h2 class="section-title">Bir Fikrin mi Var?</h2>
-                    <p class="section-desc" style="margin-bottom:40px">Proje teklifi, staj görüşmesi ya da sadece merhaba demek için — her zaman açığım. En geç 24 saat içinde dönüş yapacağım.</p>
+                    <p class="section-label" data-tr="// Konuşalım" data-en="// Let's Talk">// Konuşalım</p>
+                    <h2 class="section-title" data-tr="Bir Fikrin mi Var?" data-en="Got an Idea?">Bir Fikrin mi Var?</h2>
+                    <p class="section-desc" style="margin-bottom:40px" data-tr="Proje teklifi, staj görüşmesi ya da sadece merhaba demek için — her zaman açığım. En geç 24 saat içinde dönüş yapacağım." data-en="For project proposals, internship interviews, or just to say hello — I'm always open. I'll get back to you within 24 hours.">Proje teklifi, staj görüşmesi ya da sadece merhaba demek için — her zaman açığım. En geç 24 saat içinde dönüş yapacağım.</p>
 
                     <div class="iletisim-info-list">
                         <a href="mailto:osmanbabayigit01@icloud.com" class="iletisim-info-item">
-                            <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 0.9 2 2v12c0 1.1-0.9 2-2 2H4c-1.1 0-2-0.9-2-2V6c0-1.1 0.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            </div>
+                            <div class="ii-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 0.9 2 2v12c0 1.1-0.9 2-2 2H4c-1.1 0-2-0.9-2-2V6c0-1.1 0.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                             <div class="ii-text">
-                                <span class="ii-label">E-Posta</span>
+                                <span class="ii-label" data-tr="E-Posta" data-en="Email">E-Posta</span>
                                 <span class="ii-value">osmanbabayigit01@icloud.com</span>
                             </div>
                             <svg class="ii-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
 
                         <a href="https://github.com/osmanbabayigit" target="_blank" class="iletisim-info-item">
-                            <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-0.94-2.61c3.14-0.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73 0.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27 0.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </div>
+                            <div class="ii-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-0.94-2.61c3.14-0.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73 0.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27 0.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
                             <div class="ii-text">
                                 <span class="ii-label">GitHub</span>
                                 <span class="ii-value">github.com/osmanbabayigit</span>
@@ -457,9 +458,7 @@
                         </a>
 
                         <a href="https://www.linkedin.com/in/osman-babayigit/" target="_blank" class="iletisim-info-item">
-                            <div class="ii-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            </div>
+                            <div class="ii-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
                             <div class="ii-text">
                                 <span class="ii-label">LinkedIn</span>
                                 <span class="ii-value">linkedin.com/in/osmanbabayigit</span>
@@ -472,26 +471,26 @@
                 <div class="iletisim-sag reveal-right">
                     <form class="iletisim-form" id="my-form" onsubmit="handleForm(event)">
                         <div class="form-group">
-                            <label>İsim</label>
-                            <input type="text" name="name" placeholder="Adın Soyadın" required>
+                            <label data-tr="İsim" data-en="Name">İsim</label>
+                            <input type="text" name="name" placeholder="Adın Soyadın" data-placeholder-tr="Adın Soyadın" data-placeholder-en="Your Full Name" required>
                         </div>
                         <div class="form-group">
-                            <label>E-Posta</label>
-                            <input type="email" name="email" placeholder="ornek@email.com" required>
+                            <label data-tr="E-Posta" data-en="Email">E-Posta</label>
+                            <input type="email" name="email" placeholder="ornek@email.com" data-placeholder-tr="ornek@email.com" data-placeholder-en="example@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label>Konu</label>
-                            <input type="text" name="subject" placeholder="Proje hakkında...">
+                            <label data-tr="Konu" data-en="Subject">Konu</label>
+                            <input type="text" name="subject" placeholder="Proje hakkında..." data-placeholder-tr="Proje hakkında..." data-placeholder-en="About a project...">
                         </div>
                         <div class="form-group">
-                            <label>Mesaj</label>
-                            <textarea name="message" placeholder="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." rows="4" required></textarea>
+                            <label data-tr="Mesaj" data-en="Message">Mesaj</label>
+                            <textarea name="message" rows="4" placeholder="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." data-placeholder-tr="Merhaba! Seninle bir proje hakkında konuşmak istiyorum..." data-placeholder-en="Hi! I'd like to talk to you about a project..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary form-submit" id="formBtn">
-                            Gönder
+                            <span data-tr="Gönder" data-en="Send">Gönder</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                         </button>
-                        <div id="form-success" class="form-success" style="display:none;">
+                        <div id="form-success" class="form-success" style="display:none;" data-tr="✅ Mesajın alındı! En kısa sürede dönüş yapacağım." data-en="✅ Message received! I'll get back to you as soon as possible.">
                             ✅ Mesajın alındı! En kısa sürede dönüş yapacağım.
                         </div>
                     </form>
@@ -502,7 +501,7 @@
     </main>
 
     <div class="social-sidebar">
-        <a href="mailto:osmanbabayigit01@icloud.com" class="social-item">E-Posta</a>
+        <a href="mailto:osmanbabayigit01@icloud.com" class="social-item" data-tr="E-Posta" data-en="Email">E-Posta</a>
         <a href="https://github.com/osmanbabayigit" target="_blank" class="social-item">GitHub</a>
         <a href="https://www.linkedin.com/in/osman-babayigit/" target="_blank" class="social-item">LinkedIn</a>
         <div class="vertical-line"></div>
@@ -515,13 +514,12 @@
             <div class="footer-links">
                 <a href="https://github.com/osmanbabayigit" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/osman-babayigit/" target="_blank">LinkedIn</a>
-                <a href="mailto:osmanbabayigit01@icloud.com">E-Posta</a>
+                <a href="mailto:osmanbabayigit01@icloud.com" data-tr="E-Posta" data-en="Email">E-Posta</a>
             </div>
             <p class="footer-copy">© 2026 Osman Babayiğit — Designed & Built with ♥</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>

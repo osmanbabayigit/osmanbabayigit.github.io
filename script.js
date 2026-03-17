@@ -1,9 +1,4 @@
-/* =============================================
-   OSMAN BABAYİĞİT — PORTFOLIO v4 | script.js
-   ============================================= */
-
-
-// ---- DİNAMİK ARKA PLAN (CANVAS) ----
+let currentLang = 'tr';
 
 const canvas = document.getElementById('bg-canvas');
 const ctx    = canvas.getContext('2d');
@@ -28,13 +23,11 @@ document.addEventListener('mousemove', e => {
 });
 
 function drawBG() {
-    // Smooth glow follow
     glowX += (targetGlowX - glowX) * 0.06;
     glowY += (targetGlowY - glowY) * 0.06;
 
     ctx.clearRect(0, 0, W, H);
 
-    // Grid
     ctx.strokeStyle = 'rgba(255,255,255,0.028)';
     ctx.lineWidth   = 1;
     const S = 32;
@@ -52,14 +45,12 @@ function drawBG() {
         ctx.stroke();
     }
 
-    // Vignette
     const vignette = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.72);
     vignette.addColorStop(0, 'rgba(0,0,0,0)');
     vignette.addColorStop(1, 'rgba(0,0,0,0.94)');
     ctx.fillStyle = vignette;
     ctx.fillRect(0, 0, W, H);
 
-    // Mouse glow
     const mouseGlow = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 340);
     mouseGlow.addColorStop(0, 'rgba(240,81,56,0.06)');
     mouseGlow.addColorStop(0.5, 'rgba(240,81,56,0.02)');
@@ -72,8 +63,6 @@ function drawBG() {
 
 drawBG();
 
-
-// ---- UÇUŞAN PARÇACIKLAR ----
 
 (function createParticles() {
     const container = document.getElementById('particles');
@@ -96,17 +85,21 @@ drawBG();
 })();
 
 
-// ---- TYPEWRITER ----
-
-const roles   = ['Öğrenci & Geliştirici', 'iOS Developer', 'Swift Enthusiast', 'Game Dev Dreamer'];
-const typedEl = document.getElementById('typed-text');
+const rolesTR = ['Öğrenci & Geliştirici', 'iOS Developer', 'Swift Enthusiast', 'Game Dev Dreamer'];
+const rolesEN = ['Student & Developer',   'iOS Developer', 'Swift Enthusiast', 'Game Dev Dreamer'];
+const typedEl  = document.getElementById('typed-text');
 
 let roleIndex  = 0;
 let charIndex  = 0;
 let isDeleting = false;
 
+function getCurrentRoles() {
+    return currentLang === 'tr' ? rolesTR : rolesEN;
+}
+
 function typeWriter() {
-    const currentRole = roles[roleIndex];
+    const roles       = getCurrentRoles();
+    const currentRole = roles[roleIndex % roles.length];
 
     if (!isDeleting) {
         typedEl.textContent = currentRole.substring(0, ++charIndex);
@@ -129,29 +122,25 @@ function typeWriter() {
 typeWriter();
 
 
-// ---- REVEAL ON SCROLL ----
-
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-fade');
 
-const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target); // fire once
+function checkReveal() {
+    revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.95) {
+            el.classList.add('visible');
         }
     });
-}, { threshold: 0.12 });
+}
 
-revealEls.forEach(el => revealObserver.observe(el));
+checkReveal();
+window.addEventListener('scroll', checkReveal, { passive: true });
 
-
-// ---- PROGRESS BARS ----
 
 const barObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.querySelectorAll('.progress-fill').forEach(bar => {
-                // Small delay so animation is visible
                 setTimeout(() => {
                     bar.style.width = bar.dataset.width + '%';
                 }, 100);
@@ -163,8 +152,6 @@ const barObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.yetenek-karti').forEach(card => barObserver.observe(card));
 
-
-// ---- AKTİF MENÜ TAKİBİ ----
 
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -182,16 +169,12 @@ const activeObserver = new IntersectionObserver(entries => {
 sections.forEach(s => activeObserver.observe(s));
 
 
-// ---- HEADER ----
-
 const headerEl = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
     headerEl.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
 
-
-// ---- MOBİL MENÜ ----
 
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -209,8 +192,6 @@ function closeMobile() {
 }
 
 
-// ---- FORM ----
-
 async function handleForm(event) {
     event.preventDefault();
 
@@ -219,7 +200,7 @@ async function handleForm(event) {
     const originalContent = btn.innerHTML;
 
     btn.disabled  = true;
-    btn.innerHTML = '<span class="loader"></span> Gönderiliyor...';
+    btn.innerHTML = '<span class="loader"></span>';
 
     const data = new FormData(form);
 
@@ -232,7 +213,7 @@ async function handleForm(event) {
 
         if (response.ok) {
             btn.classList.add('btn-success-state');
-            btn.innerHTML = '✓ Gönderildi!';
+            btn.innerHTML = '✓';
             form.reset();
 
             setTimeout(() => {
@@ -241,18 +222,16 @@ async function handleForm(event) {
                 btn.disabled  = false;
             }, 3500);
         } else {
-            throw new Error('Sunucu hatası');
+            throw new Error('error');
         }
 
     } catch (error) {
-        alert('Mesaj gönderilemedi, lütfen tekrar deneyin.');
+        alert(currentLang === 'tr' ? 'Mesaj gönderilemedi, lütfen tekrar deneyin.' : 'Message could not be sent, please try again.');
         btn.innerHTML = originalContent;
         btn.disabled  = false;
     }
 }
 
-
-// ---- SMOOTH ANCHOR SCROLL ----
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -263,3 +242,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+
+function animateCounter(el, target, duration) {
+    const end  = parseInt(target);
+    if (isNaN(end)) return;
+    let start  = 0;
+    const step = Math.ceil(end / (duration / 16));
+    const suffix = el.dataset.suffix || '';
+    const timer = setInterval(() => {
+        start = Math.min(start + step, end);
+        el.textContent = start + suffix;
+        if (start >= end) clearInterval(timer);
+    }, 16);
+}
+
+const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-num').forEach(el => {
+                if (el.dataset.nocount) return;
+                const val = el.textContent.trim();
+                const num = parseInt(val);
+                if (!isNaN(num)) {
+                    const suffix = val.replace(num.toString(), '');
+                    el.dataset.suffix = suffix;
+                    animateCounter(el, num, 1200);
+                }
+            });
+            statObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) statObserver.observe(heroStats);
+
+
+document.querySelectorAll('.proje-karti, .yetenek-karti, .sertifika-karti').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width)  * 100;
+        const y = ((e.clientY - rect.top)  / rect.height) * 100;
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+        card.classList.add('spotlight-active');
+    });
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('spotlight-active');
+    });
+});
+
+
+function toggleLang() {
+    currentLang = currentLang === 'tr' ? 'en' : 'tr';
+    const btn   = document.getElementById('langToggle');
+    btn.textContent = currentLang === 'tr' ? 'EN' : 'TR';
+    btn.classList.toggle('lang-active', currentLang === 'en');
+
+    document.querySelectorAll('[data-tr]').forEach(el => {
+        const val = currentLang === 'tr' ? el.dataset.tr : el.dataset.en;
+        if (!val) return;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+        if (el.dataset.tr.includes('<')) {
+            el.innerHTML = val;
+        } else {
+            el.textContent = val;
+        }
+    });
+
+    document.querySelectorAll('[data-placeholder-tr]').forEach(el => {
+        el.placeholder = currentLang === 'tr' ? el.dataset.placeholderTr : el.dataset.placeholderEn;
+    });
+
+    document.documentElement.lang = currentLang;
+
+    roleIndex  = 0;
+    charIndex  = 0;
+    isDeleting = false;
+}

@@ -1,7 +1,3 @@
-/* =============================================
-   OSMAN BABAYİĞİT — PORTFOLIO v4 (Premium)
-   ============================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
@@ -52,11 +48,6 @@ a {
 input, textarea, button { font-family: inherit; }
 
 
-
-
-
-/* ---- ARKA PLAN & EFEKTLER ---- */
-
 #bg-canvas {
     position: fixed;
     inset: 0;
@@ -96,8 +87,6 @@ input, textarea, button { font-family: inherit; }
     opacity: 0.6;
 }
 
-
-/* ---- NAVİGASYON ---- */
 
 header {
     position: fixed;
@@ -188,7 +177,38 @@ nav {
 
 .nav-cta::after { display: none !important; }
 
-/* Hamburger */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lang-toggle {
+    background: var(--surface);
+    border: 1px solid var(--border-h);
+    color: var(--text-2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.lang-toggle:hover {
+    color: var(--text-1);
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+}
+
+.lang-toggle.lang-active {
+    background: var(--accent-dim);
+    border-color: rgba(240, 81, 56, 0.35);
+    color: var(--accent);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -211,7 +231,6 @@ nav {
 .hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Mobil Menü */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -238,8 +257,6 @@ nav {
 
 .mobile-menu a:hover { color: var(--text-1); transform: translateX(8px); }
 
-
-/* ---- ANA YAPI ---- */
 
 main { position: relative; z-index: 1; }
 
@@ -278,8 +295,6 @@ h2.section-title {
     font-weight: 400;
 }
 
-
-/* ---- HERO ---- */
 
 #giris {
     height: 100vh;
@@ -388,7 +403,6 @@ h2.section-title {
     margin-bottom: 60px;
 }
 
-/* Stats bar */
 .hero-stats {
     display: flex;
     justify-content: center;
@@ -446,11 +460,11 @@ h2.section-title {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     transition: all 0.3s var(--transition);
     border: none;
     outline: none;
     letter-spacing: 0.2px;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -479,6 +493,23 @@ h2.section-title {
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
 }
+
+.btn-cv {
+    background: transparent;
+    color: var(--text-2);
+    border: 1px solid var(--border-h);
+    backdrop-filter: blur(10px);
+}
+
+.btn-cv:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text-1);
+    transform: translateY(-3px);
+}
+
+.btn-cv svg { transition: transform 0.3s var(--transition); }
+.btn-cv:hover svg { transform: translateY(2px); }
 
 .scroll-hint {
     position: absolute;
@@ -512,8 +543,6 @@ h2.section-title {
     50%       { opacity: 1; transform: scaleY(1); }
 }
 
-
-/* ---- HAKKIMDA ---- */
 
 #hakkimda { display: block; }
 
@@ -566,8 +595,6 @@ h2.section-title {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-
-/* ---- BENTO KUTULARI ---- */
 
 .hakkimda-gorsel {
     flex: 0.75;
@@ -654,8 +681,6 @@ h2.section-title {
 .code-box:hover    { border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 0 32px rgba(255, 255, 255, 0.08); }
 
 
-/* ---- YETENEKLER ---- */
-
 .yetenek-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -740,8 +765,6 @@ h2.section-title {
 .temel  { background: rgba(255, 255, 255, 0.05); color: var(--text-2); }
 
 
-/* ---- SERTİFİKALAR ---- */
-
 .sertifika-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -814,8 +837,6 @@ h2.section-title {
 }
 
 
-/* ---- PROJELER ---- */
-
 .proje-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -859,40 +880,6 @@ h2.section-title {
 
 .proje-karti:hover .proje-resim { transform: scale(1.07); }
 
-/* Placeholder mockup (resim yokken) */
-.placeholder-mockup {
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--border);
-}
-
-.spotify-placeholder {
-    background: linear-gradient(135deg, #0a1a0a 0%, #0d1f0d 50%, #071507 100%);
-}
-
-.weather-placeholder {
-    background: linear-gradient(135deg, #060d1f 0%, #0a1228 50%, #05091a 100%);
-}
-
-.placeholder-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    z-index: 1;
-}
-
-.placeholder-content span {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--text-3);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Hover overlay on project card */
 .proje-overlay {
     position: absolute;
     inset: 0;
@@ -1007,8 +994,6 @@ h2.section-title {
 
 .github-link:hover { color: var(--accent); gap: 10px; }
 
-
-/* ---- İLETİŞİM ---- */
 
 #iletisim {
     padding-top: 120px !important;
@@ -1170,8 +1155,6 @@ h2.section-title {
 }
 
 
-/* ---- YAN SIDEBAR ---- */
-
 .social-sidebar {
     position: fixed;
     bottom: 0;
@@ -1204,8 +1187,6 @@ h2.section-title {
 }
 
 
-/* ---- FOOTER ---- */
-
 footer {
     padding: 70px 20px 44px;
     text-align: center;
@@ -1233,8 +1214,6 @@ footer {
 .footer-copy { font-size: 0.66rem; color: var(--text-3); letter-spacing: 1px; margin-top: 6px; }
 
 
-/* ---- REVEAL ANİMASYONLARI ---- */
-
 .reveal, .reveal-left, .reveal-right, .reveal-fade {
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s var(--transition);
@@ -1254,7 +1233,25 @@ footer {
 }
 
 
-/* ---- RESPONSIVE ---- */
+.proje-karti::after,
+.yetenek-karti::after,
+.sertifika-karti::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at var(--mx, 50%) var(--my, 50%),
+        rgba(255,255,255,0.055) 0%,
+        transparent 60%
+    );
+}
+
+.spotlight-active::after { opacity: 1; }
+
 
 @media (max-width: 1024px) {
     .hakkimda-container { gap: 60px; }
